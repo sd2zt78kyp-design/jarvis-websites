@@ -3,97 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Musterfirma GmbH | Handwerksbetrieb in Musterstadt</title>
-<meta name="description" content="Musterfirma GmbH – Ihr zuverlässiger Handwerksbetrieb in Musterstadt. Qualität, Erfahrung und persönlicher Service.">
+<title>Elektrotechnik Weissenbacher | Elektriker in Rosenheim</title>
+<meta name="description" content="Elektrotechnik Weissenbacher – Ihr zuverlässiger Elektriker in Rosenheim-Aising. Installation, Wartung und Notdienst für Privat und Gewerbe.">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #2c3238;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #2b2f36;
     line-height: 1.6;
-    background: #ffffff;
+    background-color: #ffffff;
   }
   a { text-decoration: none; color: inherit; }
-  img { max-width: 100%; display:block; }
+  ul { list-style: none; }
+  img { max-width: 100%; display: block; }
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
+  /* Header */
   header {
-    background: #ffffff;
-    border-bottom: 1px solid #eaeaea;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e6e8eb;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
   }
-  .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 18px 24px;
+  .header-inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
   }
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
-    color: #1f2d3d;
+    color: #1a2b4c;
     letter-spacing: 0.5px;
   }
+  .logo span {
+    color: #d1a441;
+  }
   nav ul {
-    list-style: none;
     display: flex;
     gap: 28px;
   }
-  nav ul li a {
+  nav a {
     font-size: 0.95rem;
-    color: #4a5568;
     font-weight: 500;
+    color: #2b2f36;
     transition: color 0.2s;
   }
-  nav ul li a:hover { color: #2b6cb0; }
+  nav a:hover { color: #1a2b4c; }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .nav-toggle span {
+    width: 26px;
+    height: 3px;
+    background-color: #1a2b4c;
+    border-radius: 2px;
+  }
 
+  /* Hero */
   .hero {
-    background: linear-gradient(135deg, #1f2d3d 0%, #2b3f56 100%);
-    color: #fff;
-    padding: 100px 24px;
-    text-align: center;
+    background: linear-gradient(135deg, #1a2b4c 0%, #24365d 100%);
+    color: #ffffff;
+    padding: 90px 20px;
   }
-  .hero-content {
-    max-width: 720px;
+  .hero-inner {
+    max-width: 1140px;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
   }
-  .hero h1 {
+  .hero-text {
+    flex: 1 1 480px;
+  }
+  .hero-text h1 {
     font-size: 2.6rem;
+    line-height: 1.25;
+    margin-bottom: 20px;
     font-weight: 700;
-    margin-bottom: 18px;
-    line-height: 1.3;
   }
-  .hero p {
-    font-size: 1.15rem;
-    color: #d8e0ea;
+  .hero-text p {
+    font-size: 1.1rem;
+    color: #d7dce5;
     margin-bottom: 32px;
+    max-width: 520px;
   }
   .btn {
     display: inline-block;
-    background: #2b6cb0;
-    color: #fff;
-    padding: 14px 34px;
-    border-radius: 6px;
+    padding: 14px 32px;
+    background-color: #d1a441;
+    color: #1a2b4c;
     font-weight: 600;
-    font-size: 1rem;
-    transition: background 0.2s, transform 0.2s;
+    border-radius: 4px;
+    transition: background-color 0.2s, transform 0.2s;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
   }
   .btn:hover {
-    background: #235a92;
+    background-color: #e0b859;
     transform: translateY(-2px);
   }
-
-  section {
-    padding: 80px 24px;
+  .btn-outline {
+    display: inline-block;
+    margin-left: 14px;
+    padding: 14px 32px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s;
   }
-  .section-container {
-    max-width: 1200px;
+  .btn-outline:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  .hero-visual {
+    flex: 1 1 380px;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-visual svg {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+  }
+
+  /* Info Bar */
+  .infobar {
+    background-color: #f4f6f9;
+    border-bottom: 1px solid #e6e8eb;
+  }
+  .infobar-inner {
+    max-width: 1140px;
     margin: 0 auto;
+    padding: 22px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #2b2f36;
+  }
+  .info-item svg {
+    flex-shrink: 0;
+    color: #d1a441;
+  }
+  .info-item strong {
+    display: block;
+    color: #1a2b4c;
+    font-size: 0.85rem;
+  }
+
+  /* Sections */
+  section {
+    padding: 80px 0;
   }
   .section-title {
     text-align: center;
@@ -101,381 +184,471 @@
   }
   .section-title h2 {
     font-size: 2rem;
-    color: #1f2d3d;
-    margin-bottom: 12px;
+    color: #1a2b4c;
+    margin-bottom: 14px;
   }
   .section-title p {
-    color: #6b7684;
-    font-size: 1.05rem;
+    color: #5c6470;
     max-width: 600px;
     margin: 0 auto;
   }
-
-  .services {
-    background: #f7f9fb;
+  .section-tag {
+    display: inline-block;
+    color: #d1a441;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
   }
+
+  /* Services */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
   }
   .service-card {
-    background: #fff;
-    padding: 34px 28px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #ffffff;
+    border: 1px solid #e6e8eb;
+    border-radius: 8px;
+    padding: 32px 26px;
+    transition: box-shadow 0.25s, transform 0.25s;
   }
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 28px rgba(26,43,76,0.1);
+    transform: translateY(-4px);
   }
   .service-icon {
-    width: 48px;
-    height: 48px;
-    margin-bottom: 18px;
-    color: #2b6cb0;
-  }
-  .service-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #1f2d3d;
-  }
-  .service-card p {
-    color: #6b7684;
-    font-size: 0.98rem;
-  }
-
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .about-text h2 {
-    font-size: 2rem;
-    color: #1f2d3d;
-    margin-bottom: 20px;
-  }
-  .about-text p {
-    color: #5a6472;
-    margin-bottom: 16px;
-  }
-  .about-image {
-    background: #dfe6ee;
-    border-radius: 10px;
-    min-height: 320px;
+    width: 52px;
+    height: 52px;
+    background-color: #f4f6f9;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #8697ab;
+    margin-bottom: 20px;
+    color: #1a2b4c;
+  }
+  .service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+    color: #1a2b4c;
+  }
+  .service-card p {
+    color: #5c6470;
     font-size: 0.95rem;
   }
 
-  .info-strip {
-    background: #1f2d3d;
-    color: #fff;
+  /* About */
+  .about {
+    background-color: #f4f6f9;
   }
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .info-item {
+  .about-inner {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-  .info-icon {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-    color: #7db3f0;
-  }
-  .info-item h4 {
-    font-size: 1rem;
-    margin-bottom: 6px;
-  }
-  .info-item p {
-    color: #cbd5e0;
-    font-size: 0.92rem;
-  }
-
-  .contact {
-    background: #f7f9fb;
-  }
-  .contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    flex-wrap: wrap;
     gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
+    align-items: center;
   }
-  .contact-details {
+  .about-text {
+    flex: 1 1 480px;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+    color: #1a2b4c;
+    margin-bottom: 20px;
+  }
+  .about-text p {
+    color: #5c6470;
+    margin-bottom: 16px;
+  }
+  .about-list {
+    margin-top: 20px;
+  }
+  .about-list li {
     display: flex;
-    flex-direction: column;
-    gap: 24px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: #2b2f36;
+    font-weight: 500;
   }
-  .contact-detail-item {
+  .about-list svg {
+    color: #d1a441;
+    flex-shrink: 0;
+  }
+  .about-visual {
+    flex: 1 1 380px;
+    display: flex;
+    justify-content: center;
+  }
+  .about-visual svg {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* Contact */
+  .contact-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .contact-info {
+    flex: 1 1 340px;
+  }
+  .contact-info h2 {
+    font-size: 2rem;
+    color: #1a2b4c;
+    margin-bottom: 20px;
+  }
+  .contact-info p {
+    color: #5c6470;
+    margin-bottom: 30px;
+  }
+  .contact-detail {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 26px;
   }
-  .contact-detail-item .icon {
-    width: 28px;
-    height: 28px;
-    color: #2b6cb0;
+  .contact-detail .icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #f4f6f9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a2b4c;
     flex-shrink: 0;
   }
-  .contact-detail-item h4 {
-    font-size: 0.95rem;
-    color: #1f2d3d;
+  .contact-detail strong {
+    display: block;
+    color: #1a2b4c;
     margin-bottom: 4px;
   }
-  .contact-detail-item p, .contact-detail-item a {
-    color: #5a6472;
-    font-size: 0.95rem;
+  .contact-detail span, .contact-detail a {
+    color: #5c6470;
   }
-
   .contact-form {
-    background: #fff;
-    padding: 34px;
+    flex: 1 1 420px;
+    background-color: #f4f6f9;
+    padding: 36px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e6e8eb;
   }
   .form-group {
     margin-bottom: 20px;
   }
   .form-group label {
     display: block;
-    margin-bottom: 6px;
-    font-size: 0.9rem;
-    color: #3a4452;
-    font-weight: 600;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #1a2b4c;
+    font-size: 0.92rem;
   }
   .form-group input,
   .form-group textarea {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #d9dee4;
-    border-radius: 6px;
+    border: 1px solid #cfd5dd;
+    border-radius: 5px;
     font-size: 0.95rem;
     font-family: inherit;
-    color: #2c3238;
-    transition: border 0.2s;
+    background-color: #ffffff;
+    resize: vertical;
   }
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #2b6cb0;
+    border-color: #1a2b4c;
   }
-  .form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  .submit-btn {
+  .form-submit {
     width: 100%;
-    background: #2b6cb0;
-    color: #fff;
     padding: 14px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1rem;
+    background-color: #1a2b4c;
+    color: #ffffff;
     font-weight: 600;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.2s;
+    font-size: 1rem;
+    transition: background-color 0.2s;
   }
-  .submit-btn:hover { background: #235a92; }
-  .submit-btn:disabled { background: #9db8d1; cursor: not-allowed; }
-
+  .form-submit:hover {
+    background-color: #24365d;
+  }
   .form-message {
     margin-top: 16px;
     padding: 14px;
-    border-radius: 6px;
-    font-size: 0.92rem;
+    border-radius: 5px;
+    font-size: 0.95rem;
     display: none;
   }
   .form-message.success {
-    background: #e6f4ea;
-    color: #276749;
+    background-color: #e7f7ec;
+    color: #1e6b3a;
     display: block;
   }
   .form-message.error {
-    background: #fde8e8;
-    color: #9b2c2c;
+    background-color: #fbeaea;
+    color: #a13333;
     display: block;
   }
 
+  /* Footer */
   footer {
-    background: #1f2d3d;
-    color: #cbd5e0;
-    text-align: center;
-    padding: 30px 24px;
-    font-size: 0.9rem;
+    background-color: #1a2b4c;
+    color: #cbd2de;
+    padding: 50px 0 24px;
   }
-  footer a { color: #7db3f0; }
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .footer-col h3 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin-bottom: 16px;
+  }
+  .footer-col p, .footer-col a {
+    color: #aeb6c4;
+    font-size: 0.92rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .footer-col a:hover { color: #d1a441; }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #8b93a3;
+  }
 
   @media (max-width: 768px) {
-    nav ul { display: none; }
-    .hero h1 { font-size: 2rem; }
-    .about, .contact-container {
-      grid-template-columns: 1fr;
+    nav { display: none; }
+    .nav-toggle { display: flex; }
+    nav.open {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: #ffffff;
+      border-top: 1px solid #e6e8eb;
+      padding: 20px;
     }
-    .about-image { min-height: 220px; }
+    nav.open ul {
+      flex-direction: column;
+      gap: 18px;
+    }
+    .hero-text h1 { font-size: 2rem; }
+    .btn-outline { margin-left: 0; margin-top: 12px; display: inline-block; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">Musterfirma GmbH</div>
-    <nav>
+  <div class="header-inner">
+    <div class="logo">Elektrotechnik <span>Weissenbacher</span></div>
+    <nav id="mainNav">
       <ul>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Ihr zuverlässiger Handwerksbetrieb in Musterstadt</h1>
-    <p>Qualität, Erfahrung und persönlicher Service seit vielen Jahren – für Privat- und Geschäftskunden in der Region.</p>
-    <a href="#kontakt" class="btn">Jetzt Kontakt aufnehmen</a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Ihr Elektriker in Rosenheim – zuverlässig, fachkundig, vor Ort</h1>
+      <p>Elektrotechnik Weissenbacher steht für saubere Installationen, schnelle Reaktionszeiten und Elektroarbeiten nach höchstem Sicherheitsstandard – für Privathaushalte und Gewerbe in Rosenheim-Aising und Umgebung.</p>
+      <a href="#kontakt" class="btn">Jetzt Kontakt aufnehmen</a>
+      <a href="tel:08031269391" class="btn-outline">Anrufen</a>
+    </div>
+    <div class="hero-visual">
+      <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="40" y="40" width="320" height="240" rx="10" stroke="#d1a441" stroke-width="2" opacity="0.5"/>
+        <path d="M200 70 L140 170 H190 L170 250 L260 140 H210 L230 70 Z" fill="#d1a441" opacity="0.9"/>
+        <circle cx="200" cy="160" r="120" stroke="#ffffff" stroke-width="1.5" opacity="0.2"/>
+      </svg>
+    </div>
   </div>
 </section>
 
-<section id="leistungen" class="services">
-  <div class="section-container">
+<div class="infobar">
+  <div class="infobar-inner">
+    <div class="info-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <div>
+        <strong>Telefon</strong>
+        08031 269391
+      </div>
+    </div>
+    <div class="info-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <div>
+        <strong>Standort</strong>
+        Nußbaumstraße 4, 83026 Rosenheim-Aising
+      </div>
+    </div>
+    <div class="info-item">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <div>
+        <strong>Erreichbarkeit</strong>
+        Mo–Fr: 07:00–17:00 Uhr
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="container">
     <div class="section-title">
-      <h2>Unsere Leistungen</h2>
-      <p>Wir bieten Ihnen ein breites Spektrum an handwerklichen Dienstleistungen – zuverlässig, termingerecht und in hoher Qualität.</p>
+      <span class="section-tag">Unsere Leistungen</span>
+      <h2>Elektroinstallation aus einer Hand</h2>
+      <p>Von der Neuinstallation über Wartung bis zum Notdienst – wir kümmern uns fachgerecht um alle elektrotechnischen Anliegen.</p>
     </div>
     <div class="services-grid">
+
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-3-3z"></path>
-        </svg>
-        <h3>Reparaturen &amp; Wartung</h3>
-        <p>Schnelle und fachgerechte Ausführung von Reparatur- und Wartungsarbeiten für Ihr Zuhause oder Ihr Unternehmen.</p>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Elektroinstallation</h3>
+        <p>Fachgerechte Planung und Umsetzung von Elektroinstallationen in Neubau und Sanierung, nach aktuellen VDE-Normen.</p>
       </div>
+
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 21h18"></path>
-          <path d="M5 21V9l7-6 7 6v12"></path>
-          <path d="M9 21v-6h6v6"></path>
-        </svg>
-        <h3>Neubau &amp; Umbau</h3>
-        <p>Von der Planung bis zur Umsetzung begleiten wir Sie bei Neubau- und Umbauprojekten jeder Größenordnung.</p>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Notdienst</h3>
+        <p>Schnelle Hilfe bei Stromausfall, defekten Leitungen oder Sicherheitsrisiken – zügig und zuverlässig behoben.</p>
       </div>
+
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"></circle>
-          <path d="M9 12l2 2 4-4"></path>
-        </svg>
-        <h3>Beratung &amp; Planung</h3>
-        <p>Individuelle Beratung und detaillierte Planung, damit Ihr Projekt reibungslos und im Budgetrahmen umgesetzt wird.</p>
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/></svg>
+        </div>
+        <h3>Smart Home</h3>
+        <p>Moderne Steuerungstechnik für Licht, Heizung und Sicherheit – individuell geplant und professionell installiert.</p>
       </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <h3>Prüfung & Wartung</h3>
+        <p>Regelmäßige E-Check-Prüfungen und vorbeugende Wartung für mehr Sicherheit in Ihrem Zuhause oder Betrieb.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l2-2m0 0 7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11 2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1m-6 0h6"/></svg>
+        </div>
+        <h3>Zählerschrank & Verteiler</h3>
+        <p>Modernisierung und Erneuerung von Zählerschränken und Verteilerkästen nach aktuellem Sicherheitsstandard.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10M9 16v4m6-4v4M5 4h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/></svg>
+        </div>
+        <h3>Beleuchtungskonzepte</h3>
+        <p>Individuelle Lichtplanung für Wohn- und Geschäftsräume – funktional, energieeffizient und stimmungsvoll.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section id="ueber-uns" class="about">
-  <div class="about-text">
-    <h2>Über Musterfirma GmbH</h2>
-    <p>Seit vielen Jahren stehen wir für Qualität, Verlässlichkeit und persönlichen Service in Musterstadt und Umgebung. Unser erfahrenes Team sorgt dafür, dass jedes Projekt sorgfältig und termingerecht umgesetzt wird.</p>
-    <p>Wir legen großen Wert auf transparente Kommunikation und eine faire, nachvollziehbare Preisgestaltung – damit Sie sich bei uns rundum gut aufgehoben fühlen.</p>
-  </div>
-  <div class="about-image">Firmenfoto / Team</div>
-</section>
-
-<section class="info-strip">
-  <div class="section-container">
-    <div class="info-grid">
-      <div class="info-item">
-        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <div>
-          <h4>Telefon</h4>
-          <p>+49 123 4567890</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <div>
-          <h4>Standort</h4>
-          <p>Musterstraße 1, 12345 Musterstadt</p>
-        </div>
-      </div>
-      <div class="info-item">
-        <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"></circle>
-          <path d="M12 7v5l3 3"></path>
-        </svg>
-        <div>
-          <h4>Öffnungszeiten</h4>
-          <p>Mo–Fr: 08:00 – 17:00 Uhr</p>
-        </div>
-      </div>
+<section class="about" id="ueber-uns">
+  <div class="container about-inner">
+    <div class="about-text">
+      <span class="section-tag">Über uns</span>
+      <h2>Regionale Handwerkskompetenz aus Rosenheim-Aising</h2>
+      <p>Elektrotechnik Weissenbacher ist Ihr Ansprechpartner für Elektroarbeiten aller Art in Rosenheim und Umgebung. Mit langjähriger Erfahrung, fundiertem Fachwissen und einem hohen Anspruch an Qualität sorgen wir dafür, dass Ihre elektrischen Anlagen sicher und zuverlässig funktionieren.</p>
+      <p>Ob privater Wohnraum, Gewerbe oder Neubauprojekt – wir beraten Sie persönlich und finden für jede Anforderung die passende Lösung.</p>
+      <ul class="about-list">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Persönliche Beratung vor Ort
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Faire und transparente Preise
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Arbeiten nach VDE-Norm
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Schnelle Terminvergabe
+        </li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="150" r="140" stroke="#1a2b4c" stroke-width="1.5" opacity="0.15"/>
+        <path d="M150 60 L100 170 H140 L120 240 L200 130 H160 L180 60 Z" fill="#1a2b4c" opacity="0.85"/>
+      </svg>
     </div>
   </div>
 </section>
 
-<section id="kontakt" class="contact">
-  <div class="section-container">
-    <div class="section-title">
-      <h2>Kontaktieren Sie uns</h2>
-      <p>Haben Sie Fragen oder möchten Sie ein Projekt besprechen? Wir freuen uns auf Ihre Nachricht.</p>
-    </div>
-    <div class="contact-container">
-      <div class="contact-details">
-        <div class="contact-detail-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-          </svg>
-          <div>
-            <h4>Telefon</h4>
-            <a href="tel:+491234567890">+49 123 4567890</a>
-          </div>
+<section id="kontakt">
+  <div class="container contact-inner">
+    <div class="contact-info">
+      <span class="section-tag">Kontakt</span>
+      <h2>Sprechen Sie mit uns</h2>
+      <p>Ob Anfrage, Terminwunsch oder Notfall – wir sind für Sie da. Nutzen Sie das Formular oder kontaktieren Sie uns direkt.</p>
+
+      <div class="contact-detail">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
-        <div class="contact-detail-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-            <circle cx="12" cy="10" r="3"></circle>
-          </svg>
-          <div>
-            <h4>Adresse</h4>
-            <p>Musterstraße 1, 12345 Musterstadt</p>
-          </div>
-        </div>
-        <div class="contact-detail-item">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 7v5l3 3"></path>
-          </svg>
-          <div>
-            <h4>Öffnungszeiten</h4>
-            <p>Montag – Freitag: 08:00 – 17:00 Uhr</p>
-          </div>
+        <div>
+          <strong>Telefon</strong>
+          <a href="tel:08031269391">08031 269391</a>
         </div>
       </div>
 
-      <form class="contact-form" id="contactForm">
+      <div class="contact-detail">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <strong>Adresse</strong>
+          <span>Nußbaumstraße 4, 83026 Rosenheim-Aising, Deutschland</span>
+        </div>
+      </div>
+
+      <div class="contact-detail">
+        <div class="icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <strong>Erreichbarkeit</strong>
+          <span>Montag – Freitag: 07:00 – 17:00 Uhr</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form id="kontaktFormular">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
@@ -486,35 +659,62 @@
         </div>
         <div class="form-group">
           <label for="nachricht">Nachricht</label>
-          <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht an uns"></textarea>
+          <textarea id="nachricht" name="nachricht" rows="5" required placeholder="Wie können wir Ihnen helfen?"></textarea>
         </div>
-        <button type="submit" class="submit-btn" id="submitBtn">Nachricht senden</button>
-        <div class="form-message" id="formMessage"></div>
+        <button type="submit" class="form-submit">Nachricht senden</button>
+        <div id="formMessage" class="form-message"></div>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; <span id="jahr"></span> Musterfirma GmbH – Musterstadt. Alle Rechte vorbehalten.</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3>Elektrotechnik Weissenbacher</h3>
+        <p>Ihr Elektriker in Rosenheim-Aising für Installation, Wartung und Notdienst.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <a href="tel:08031269391">08031 269391</a>
+        <p>Nußbaumstraße 4</p>
+        <p>83026 Rosenheim-Aising</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; <span id="jahr"></span> Elektrotechnik Weissenbacher – Alle Rechte vorbehalten.
+    </div>
+  </div>
 </footer>
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
+  const navToggle = document.getElementById('navToggle');
+  const mainNav = document.getElementById('mainNav');
+  navToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('open');
+  });
+
+  const form = document.getElementById('kontaktFormular');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    var submitBtn = document.getElementById('submitBtn');
-    var formMessage = document.getElementById('formMessage');
-    var name = document.getElementById('name').value;
-    var kontakt = document.getElementById('kontakt').value;
-    var nachricht = document.getElementById('nachricht').value;
+    const name = document.getElementById('name').value.trim();
+    const kontakt = document.getElementById('kontakt').value.trim();
+    const nachricht = document.getElementById('nachricht').value.trim();
 
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Wird gesendet...';
-    formMessage.style.display = 'none';
     formMessage.className = 'form-message';
+    formMessage.style.display = 'none';
 
     fetch('https://vinka.app.n8n.cloud/webhook/kontakt-formular', {
       method: 'POST',
@@ -522,27 +722,24 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        firma: "",
+        firma: 'Elektrotechnik Weissenbacher',
         name: name,
         kontakt: kontakt,
         nachricht: nachricht
       })
     })
     .then(function(response) {
-      if (!response.ok) {
-        throw new Error('Netzwerkfehler');
+      if (response.ok) {
+        formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen.';
+        formMessage.className = 'form-message success';
+        form.reset();
+      } else {
+        throw new Error('Fehler beim Senden');
       }
-      formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns in Kürze bei Ihnen.';
-      formMessage.className = 'form-message success';
-      document.getElementById('contactForm').reset();
     })
-    .catch(function(error) {
-      formMessage.textContent = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns telefonisch.';
+    .catch(function() {
+      formMessage.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
       formMessage.className = 'form-message error';
-    })
-    .finally(function() {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Nachricht senden';
     });
   });
 </script>
