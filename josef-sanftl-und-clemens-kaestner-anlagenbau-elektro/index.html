@@ -3,31 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustermann GmbH | Sanitär & Heizung in Musterstadt</title>
-<meta name="description" content="Mustermann GmbH – Ihr zuverlässiger Fachbetrieb für Sanitär und Heizung in Musterstadt. Beratung, Installation und Wartung aus einer Hand.">
+<title>Josef Sanftl und Clemens Kästner Anlagenbau, Elektro | Elektriker in Rosenheim</title>
+<meta name="description" content="Ihr zuverlässiger Elektriker in Rosenheim - Anlagenbau, Elektroinstallation und mehr. Josef Sanftl und Clemens Kästner Anlagenbau, Elektro.">
 <style>
-  :root {
-    --primary: #1f3a5f;
-    --primary-light: #2c507f;
-    --accent: #c9a96e;
-    --bg-light: #f7f8fa;
-    --text-dark: #22303f;
-    --text-muted: #5a6b7b;
-    --white: #ffffff;
-    --border: #e2e6ea;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+
   body {
-    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    color: var(--text-dark);
-    background: var(--white);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2b2f36;
     line-height: 1.6;
+    background-color: #ffffff;
   }
-  img, svg { display: block; }
-  a { color: inherit; text-decoration: none; }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   .container {
-    width: 100%;
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
@@ -35,343 +32,470 @@
 
   /* Header */
   header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
     z-index: 100;
   }
+
   .header-inner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 16px 0;
+    align-items: center;
+    padding: 18px 20px;
+    max-width: 1140px;
+    margin: 0 auto;
   }
+
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--primary);
-    letter-spacing: 0.5px;
+    color: #1a3550;
+    line-height: 1.3;
   }
-  .logo span { color: var(--accent); }
+
+  .logo span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #5a6472;
+  }
+
   nav ul {
     list-style: none;
     display: flex;
     gap: 28px;
   }
-  nav a {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    transition: color 0.2s;
-  }
-  nav a:hover { color: var(--primary); }
-  .header-phone {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    color: var(--primary);
-    font-size: 0.95rem;
-  }
-  .menu-toggle { display: none; }
 
-  @media (max-width: 768px) {
-    nav { display: none; }
-    .header-phone { display: none; }
+  nav a {
+    font-weight: 500;
+    color: #2b2f36;
+    transition: color 0.2s;
+    font-size: 0.95rem;
+  }
+
+  nav a:hover {
+    color: #d3862b;
+  }
+
+  .call-btn {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #1a3550;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background-color 0.2s;
+    }
+    .call-btn:hover {
+      background-color: #d3862b;
+    }
   }
 
   /* Hero */
   .hero {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-    color: var(--white);
-    padding: 90px 0 100px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #1a3550 0%, #2c4d6e 100%);
+    color: #fff;
+    padding: 90px 20px 100px;
+    text-align: center;
   }
-  .hero::after {
-    content: "";
-    position: absolute;
-    right: -80px;
-    bottom: -80px;
-    width: 320px;
-    height: 320px;
-    border: 40px solid rgba(255,255,255,0.06);
-    border-radius: 50%;
-  }
-  .hero-content {
-    max-width: 620px;
-    position: relative;
-    z-index: 2;
-  }
+
   .hero h1 {
-    font-size: 2.6rem;
-    line-height: 1.25;
-    margin-bottom: 20px;
+    font-size: 2.4rem;
     font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.25;
   }
+
   .hero p {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 32px;
+    font-size: 1.15rem;
+    max-width: 640px;
+    margin: 0 auto 32px;
+    color: #dbe4ee;
   }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
   .btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 14px 30px;
-    border-radius: 4px;
+    padding: 14px 28px;
+    border-radius: 6px;
     font-weight: 600;
     font-size: 1rem;
+    transition: all 0.2s;
     cursor: pointer;
     border: none;
-    transition: all 0.2s;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: var(--primary);
-  }
-  .btn-primary:hover { background: #d9bb87; }
-  .btn-outline {
-    background: transparent;
-    border: 1.5px solid var(--white);
-    color: var(--white);
-  }
-  .btn-outline:hover { background: rgba(255,255,255,0.1); }
-  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
 
-  @media (max-width: 600px) {
-    .hero h1 { font-size: 2rem; }
-    .hero { padding: 60px 0 70px; text-align: center; }
-    .hero-content { margin: 0 auto; }
-    .hero-buttons { justify-content: center; }
+  .btn-primary {
+    background-color: #d3862b;
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background-color: #b96f1f;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+  }
+
+  .btn-outline:hover {
+    background-color: #ffffff;
+    color: #1a3550;
   }
 
   /* Sections */
-  section { padding: 80px 0; }
-  .section-bg { background: var(--bg-light); }
-  .section-header {
+  section {
+    padding: 80px 20px;
+  }
+
+  .section-title {
     text-align: center;
-    max-width: 640px;
-    margin: 0 auto 50px;
+    margin-bottom: 50px;
   }
-  .section-header .eyebrow {
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 10px;
-    display: block;
-  }
-  .section-header h2 {
+
+  .section-title h2 {
     font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 14px;
+    color: #1a3550;
+    margin-bottom: 12px;
   }
-  .section-header p { color: var(--text-muted); }
+
+  .section-title p {
+    color: #5a6472;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
   /* Services */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    max-width: 1140px;
+    margin: 0 auto;
   }
-  @media (max-width: 900px) {
-    .services-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .services-grid { grid-template-columns: 1fr; }
-  }
+
   .service-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    background-color: #f7f9fb;
     padding: 32px 26px;
+    border-radius: 10px;
+    border: 1px solid #e7ebef;
     transition: transform 0.2s, box-shadow 0.2s;
   }
+
   .service-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(31,58,95,0.08);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   }
-  .icon-circle {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    background: rgba(31,58,95,0.08);
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #1a3550;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 18px;
   }
-  .icon-circle svg { width: 26px; height: 26px; stroke: var(--primary); }
+
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: #fff;
+  }
+
   .service-card h3 {
     font-size: 1.15rem;
-    color: var(--primary);
+    color: #1a3550;
     margin-bottom: 10px;
   }
-  .service-card p { color: var(--text-muted); font-size: 0.95rem; }
+
+  .service-card p {
+    color: #5a6472;
+    font-size: 0.95rem;
+  }
 
   /* About */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .about {
+    background-color: #f7f9fb;
+  }
+
+  .about-inner {
+    display: flex;
+    flex-wrap: wrap;
     gap: 50px;
     align-items: center;
+    max-width: 1140px;
+    margin: 0 auto;
   }
-  @media (max-width: 800px) {
-    .about-grid { grid-template-columns: 1fr; }
+
+  .about-text {
+    flex: 1 1 400px;
   }
-  .about-image {
-    width: 100%;
-    height: 320px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    border-radius: 10px;
-    opacity: 0.9;
-  }
+
   .about-text h2 {
     font-size: 2rem;
-    color: var(--primary);
-    margin-bottom: 18px;
+    color: #1a3550;
+    margin-bottom: 20px;
   }
-  .about-text p { color: var(--text-muted); margin-bottom: 16px; }
-  .about-list { list-style: none; margin-top: 20px; }
-  .about-list li {
+
+  .about-text p {
+    color: #5a6472;
+    margin-bottom: 16px;
+  }
+
+  .about-facts {
+    flex: 1 1 300px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .fact {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    color: var(--text-dark);
-    font-weight: 500;
+    gap: 16px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e7ebef;
   }
-  .about-list svg { width: 20px; height: 20px; stroke: var(--accent); flex-shrink: 0; }
 
-  /* Contact */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 50px;
-  }
-  @media (max-width: 800px) {
-    .contact-grid { grid-template-columns: 1fr; }
-  }
-  .contact-info {
-    background: var(--primary);
-    color: var(--white);
-    border-radius: 10px;
-    padding: 40px 32px;
-  }
-  .contact-info h3 {
-    font-size: 1.4rem;
-    margin-bottom: 24px;
-    color: var(--white);
-  }
-  .contact-item {
+  .fact-icon {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    background-color: #d3862b;
+    border-radius: 8px;
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 22px;
+    align-items: center;
+    justify-content: center;
   }
-  .contact-item svg {
+
+  .fact-icon svg {
     width: 22px;
     height: 22px;
-    stroke: var(--accent);
-    flex-shrink: 0;
-    margin-top: 2px;
+    stroke: #fff;
   }
-  .contact-item div { font-size: 0.95rem; color: rgba(255,255,255,0.9); }
-  .contact-item strong { display: block; color: var(--white); margin-bottom: 2px; }
+
+  .fact-text strong {
+    display: block;
+    color: #1a3550;
+    font-size: 1rem;
+  }
+
+  .fact-text span {
+    color: #5a6472;
+    font-size: 0.9rem;
+  }
+
+  /* Contact */
+  .contact-section {
+    background-color: #ffffff;
+  }
+
+  .contact-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .contact-info {
+    flex: 1 1 320px;
+  }
+
+  .contact-info h2 {
+    font-size: 1.8rem;
+    color: #1a3550;
+    margin-bottom: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .contact-item .icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #1a3550;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item .icon-box svg {
+    width: 22px;
+    height: 22px;
+    stroke: #fff;
+  }
+
+  .contact-item strong {
+    display: block;
+    color: #1a3550;
+    margin-bottom: 4px;
+  }
+
+  .contact-item p, .contact-item a {
+    color: #5a6472;
+    font-size: 0.95rem;
+  }
 
   .contact-form {
-    background: var(--white);
-    border: 1px solid var(--border);
+    flex: 1 1 380px;
+    background-color: #f7f9fb;
+    padding: 36px;
     border-radius: 10px;
-    padding: 40px 32px;
+    border: 1px solid #e7ebef;
   }
-  .form-group { margin-bottom: 20px; }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
   .form-group label {
     display: block;
-    font-weight: 600;
-    font-size: 0.9rem;
     margin-bottom: 6px;
-    color: var(--text-dark);
+    font-weight: 600;
+    color: #1a3550;
+    font-size: 0.9rem;
   }
+
   .form-group input,
   .form-group textarea {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid var(--border);
+    border: 1px solid #d3d9df;
     border-radius: 6px;
     font-size: 0.95rem;
     font-family: inherit;
-    color: var(--text-dark);
-    transition: border 0.2s;
+    resize: vertical;
   }
+
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-light);
+    border-color: #1a3550;
   }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .form-submit {
+
+  .submit-btn {
     width: 100%;
-    justify-content: center;
-    background: var(--primary);
-    color: var(--white);
+    background-color: #d3862b;
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
   }
-  .form-submit:hover { background: var(--primary-light); }
-  .form-msg {
+
+  .submit-btn:hover {
+    background-color: #b96f1f;
+  }
+
+  .form-message {
     margin-top: 16px;
-    padding: 14px 16px;
+    padding: 14px;
     border-radius: 6px;
     font-size: 0.9rem;
     display: none;
   }
-  .form-msg.success {
+
+  .form-message.success {
+    background-color: #e3f5e6;
+    color: #237a3a;
     display: block;
-    background: #e3f3e6;
-    color: #2a6b34;
-    border: 1px solid #bfe3c6;
   }
-  .form-msg.error {
+
+  .form-message.error {
+    background-color: #fbe4e4;
+    color: #a3312f;
     display: block;
-    background: #fdecec;
-    color: #a12e2e;
-    border: 1px solid #f5c6c6;
   }
 
   /* Footer */
   footer {
-    background: #16263c;
-    color: rgba(255,255,255,0.8);
-    padding: 40px 0 24px;
-  }
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 24px;
-  }
-  .footer-inner .logo { color: var(--white); }
-  .footer-inner .logo span { color: var(--accent); }
-  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-  .footer-links a { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
-  .footer-links a:hover { color: var(--white); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
+    background-color: #1a3550;
+    color: #cdd6e0;
+    padding: 40px 20px 24px;
     text-align: center;
+  }
+
+  footer .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  footer h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.15);
     font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
+    color: #9fabbb;
+  }
+
+  @media (max-width: 767px) {
+    nav {
+      display: none;
+    }
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    section {
+      padding: 60px 16px;
+    }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="container header-inner">
-    <div class="logo">Mustermann<span>GmbH</span></div>
+  <div class="header-inner">
+    <div class="logo">
+      Josef Sanftl &amp; Clemens Kästner
+      <span>Anlagenbau, Elektro</span>
+    </div>
     <nav>
       <ul>
         <li><a href="#leistungen">Leistungen</a></li>
@@ -379,168 +503,187 @@
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
-    <a href="tel:+491234567890" class="header-phone">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" width="18" height="18">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.166-1.463l-3.223-.805a1.5 1.5 0 00-1.516.44l-.75.75a11.25 11.25 0 01-6.364-6.364l.75-.75a1.5 1.5 0 00.44-1.516l-.805-3.223A1.5 1.5 0 006.622 3.75H5.25A2.25 2.25 0 003 6z"/>
-      </svg>
-      +49 123 456789
+    <a href="tel:08031299000" class="call-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"></path></svg>
+      08031 299000
     </a>
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <h1>Sanitär & Heizung mit Handschlagqualität – seit über 20 Jahren in Musterstadt.</h1>
-      <p>Wir sorgen für zuverlässige Wärme und einwandfreie Sanitärtechnik in Ihrem Zuhause oder Betrieb – kompetent, termintreu und persönlich.</p>
-      <div class="hero-buttons">
-        <a href="#kontakt" class="btn btn-primary">Jetzt Beratung anfragen</a>
-        <a href="tel:+491234567890" class="btn btn-outline">Anrufen: +49 123 456789</a>
-      </div>
+    <h1>Ihr Elektriker in Rosenheim – zuverlässig, fachkundig, vor Ort</h1>
+    <p>Josef Sanftl und Clemens Kästner Anlagenbau, Elektro steht seit Jahren für professionelle Elektroinstallationen, Anlagenbau und Service in Rosenheim und Umgebung.</p>
+    <div class="hero-buttons">
+      <a href="tel:08031299000" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"></path></svg>
+        Jetzt anrufen
+      </a>
+      <a href="#kontakt" class="btn btn-outline">Nachricht senden</a>
     </div>
   </div>
 </section>
 
 <section id="leistungen">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Unsere Leistungen</span>
-      <h2>Alles aus einer Hand</h2>
-      <p>Von der Beratung über die Installation bis zur Wartung – wir begleiten Sie durch den gesamten Prozess.</p>
+    <div class="section-title">
+      <h2>Unsere Leistungen</h2>
+      <p>Von der Elektroinstallation bis zum Anlagenbau – wir bieten Ihnen ein umfassendes Leistungsspektrum aus einer Hand.</p>
     </div>
     <div class="services-grid">
+
       <div class="service-card">
-        <div class="icon-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v10.5m0 0a3 3 0 11-3 3m3-3a3 3 0 013 3M6 21h12"/>
-          </svg>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
         </div>
-        <h3>Heizungsinstallation</h3>
-        <p>Fachgerechte Planung und Installation moderner, effizienter Heizsysteme für Ihr Zuhause.</p>
+        <h3>Elektroinstallation</h3>
+        <p>Fachgerechte Installation von Elektroanlagen in Wohn- und Gewerbegebäuden, normgerecht und zukunftssicher.</p>
       </div>
+
       <div class="service-card">
-        <div class="icon-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9m0 18c2.5-2.5 4-5.5 4-9s-1.5-6.5-4-9"/>
-          </svg>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a4 4 0 0 1 8 0v2"></path></svg>
         </div>
-        <h3>Sanitärtechnik</h3>
-        <p>Badsanierung, Rohrleitungen und Armaturen – wir sorgen für zuverlässige Wasserversorgung.</p>
+        <h3>Anlagenbau</h3>
+        <p>Planung, Bau und Wartung von elektrotechnischen Anlagen – individuell auf Ihre Anforderungen abgestimmt.</p>
       </div>
+
       <div class="service-card">
-        <div class="icon-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z"/>
-          </svg>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
         </div>
-        <h3>Wartung & Notdienst</h3>
-        <p>Regelmäßige Wartung und schneller Notdienst, damit Sie sich auf Ihre Anlagen verlassen können.</p>
+        <h3>Notdienst &amp; Service</h3>
+        <p>Schnelle Hilfe bei Störungen und Ausfällen – zuverlässig und termingerecht für Privat- und Geschäftskunden.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21h6"></path><path d="M12 17v4"></path><path d="M8 3h8l3 8H5l3-8z"></path><path d="M5 11h14v6H5z"></path></svg>
+        </div>
+        <h3>Smart Home &amp; Beleuchtung</h3>
+        <p>Moderne Beleuchtungskonzepte und intelligente Haussteuerung für mehr Komfort und Energieeffizienz.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+        </div>
+        <h3>Wartung &amp; Prüfung</h3>
+        <p>Regelmäßige Prüfung und Wartung elektrischer Anlagen gemäß gesetzlicher Vorgaben – für Ihre Sicherheit.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7"></path><path d="M4 10V3"></path><path d="M12 21v-9"></path><path d="M12 8V3"></path><path d="M20 21v-5"></path><path d="M20 12V3"></path><path d="M1 14h6"></path><path d="M9 8h6"></path><path d="M17 16h6"></path></svg>
+        </div>
+        <h3>Individuelle Beratung</h3>
+        <p>Persönliche und kompetente Beratung zu allen Fragen rund um Elektroinstallation und Anlagentechnik.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="ueber-uns">
+  <div class="container about-inner">
+    <div class="about-text">
+      <h2>Über uns</h2>
+      <p>Josef Sanftl und Clemens Kästner Anlagenbau, Elektro ist Ihr kompetenter Partner für Elektrotechnik in Rosenheim. Mit langjähriger Erfahrung und handwerklichem Können sorgen wir für sichere und effiziente elektrische Anlagen – ob im privaten oder gewerblichen Bereich.</p>
+      <p>Qualität, Zuverlässigkeit und persönlicher Service stehen bei uns im Mittelpunkt. Sprechen Sie uns an – wir beraten Sie gerne.</p>
+    </div>
+    <div class="about-facts">
+      <div class="fact">
+        <div class="fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div class="fact-text">
+          <strong>Standort</strong>
+          <span>Ludwigspl. 28, 83022 Rosenheim</span>
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        </div>
+        <div class="fact-text">
+          <strong>Erreichbarkeit</strong>
+          <span>Mo–Fr, nach Terminvereinbarung</span>
+        </div>
+      </div>
+      <div class="fact">
+        <div class="fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <div class="fact-text">
+          <strong>Telefon</strong>
+          <span>08031 299000</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="ueber-uns" class="section-bg">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-image"></div>
-      <div class="about-text">
-        <h2>Ihr Fachbetrieb in Musterstadt</h2>
-        <p>Die Mustermann GmbH steht seit über zwei Jahrzehnten für Qualität, Zuverlässigkeit und persönliche Betreuung in den Bereichen Sanitär und Heizung.</p>
-        <p>Unser erfahrenes Team sorgt dafür, dass Ihre Anlagen sicher, effizient und langlebig arbeiten – von der ersten Beratung bis zur langfristigen Betreuung.</p>
-        <ul class="about-list">
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            Über 20 Jahre Erfahrung
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            Meisterbetrieb mit Festpreisgarantie
-          </li>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
-            Schnelle Termine & zuverlässiger Service
-          </li>
-        </ul>
+<section class="contact-section" id="kontakt">
+  <div class="container contact-inner">
+    <div class="contact-info">
+      <h2>Kontaktieren Sie uns</h2>
+      <div class="contact-item">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div>
+          <strong>Adresse</strong>
+          <p>Ludwigspl. 28, 83022 Rosenheim, Deutschland</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.81.35 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.25a2 2 0 0 1 2.11-.45c.74.33 1.53.56 2.34.68A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <div>
+          <strong>Telefon</strong>
+          <a href="tel:08031299000">08031 299000</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+        </div>
+        <div>
+          <strong>Erreichbarkeit</strong>
+          <p>Mo–Fr, nach Terminvereinbarung</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section id="kontakt">
-  <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Kontakt</span>
-      <h2>Sprechen Sie mit uns</h2>
-      <p>Wir beraten Sie gerne persönlich und erstellen Ihnen ein unverbindliches Angebot.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Kontaktdaten</h3>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.166-1.463l-3.223-.805a1.5 1.5 0 00-1.516.44l-.75.75a11.25 11.25 0 01-6.364-6.364l.75-.75a1.5 1.5 0 00.44-1.516l-.805-3.223A1.5 1.5 0 006.622 3.75H5.25A2.25 2.25 0 003 6z"/>
-          </svg>
-          <div>
-            <strong>Telefon</strong>
-            +49 123 456789
-          </div>
+    <div class="contact-form">
+      <form id="kontaktFormular">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Ihr Name">
         </div>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-          </svg>
-          <div>
-            <strong>Adresse</strong>
-            Musterstraße 12, 12345 Musterstadt
-          </div>
+        <div class="form-group">
+          <label for="kontakt">Telefon oder E-Mail</label>
+          <input type="text" id="kontakt" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail-Adresse">
         </div>
-        <div class="contact-item">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M12 22a10 10 0 100-20 10 10 0 000 20z"/>
-          </svg>
-          <div>
-            <strong>Öffnungszeiten</strong>
-            Mo–Fr: 08:00–17:00 Uhr
-          </div>
+        <div class="form-group">
+          <label for="nachricht">Nachricht</label>
+          <textarea id="nachricht" name="nachricht" rows="5" required placeholder="Ihre Nachricht an uns"></textarea>
         </div>
-      </div>
-
-      <div class="contact-form">
-        <form id="kontaktFormular">
-          <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
-          </div>
-          <div class="form-group">
-            <label for="kontakt">Telefon oder E-Mail</label>
-            <input type="text" id="kontakt" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail-Adresse">
-          </div>
-          <div class="form-group">
-            <label for="nachricht">Nachricht</label>
-            <textarea id="nachricht" name="nachricht" required placeholder="Wie können wir Ihnen helfen?"></textarea>
-          </div>
-          <button type="submit" class="btn form-submit">Nachricht senden</button>
-          <div id="formMsg" class="form-msg"></div>
-        </form>
-      </div>
+        <button type="submit" class="submit-btn">Nachricht senden</button>
+        <div class="form-message" id="formMessage"></div>
+      </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="logo">Mustermann<span>GmbH</span></div>
-      <div class="footer-links">
-        <a href="#leistungen">Leistungen</a>
-        <a href="#ueber-uns">Über uns</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-    </div>
+  <div class="footer-inner">
+    <h3>Josef Sanftl und Clemens Kästner Anlagenbau, Elektro</h3>
+    <p>Ludwigspl. 28, 83022 Rosenheim, Deutschland</p>
+    <p>Telefon: 08031 299000</p>
     <div class="footer-bottom">
-      &copy; <span id="jahr"></span> Mustermann GmbH. Alle Rechte vorbehalten.
+      &copy; <span id="jahr"></span> Josef Sanftl und Clemens Kästner Anlagenbau, Elektro. Alle Rechte vorbehalten.
     </div>
   </div>
 </footer>
@@ -548,18 +691,15 @@
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  const formular = document.getElementById('kontaktFormular');
-  const formMsg = document.getElementById('formMsg');
+  const form = document.getElementById('kontaktFormular');
+  const formMessage = document.getElementById('formMessage');
 
-  formular.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const kontakt = document.getElementById('kontakt').value.trim();
-    const nachricht = document.getElementById('nachricht').value.trim();
-
-    formMsg.className = 'form-msg';
-    formMsg.style.display = 'none';
+    const name = document.getElementById('name').value;
+    const kontakt = document.getElementById('kontakt').value;
+    const nachricht = document.getElementById('nachricht').value;
 
     fetch('https://vinka.app.n8n.cloud/webhook/kontakt-formular', {
       method: 'POST',
@@ -567,23 +707,24 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        firma: "",
+        firma: "Josef Sanftl und Clemens Kästner Anlagenbau, Elektro",
         name: name,
         kontakt: kontakt,
         nachricht: nachricht
       })
     })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error('Netzwerkfehler');
+    .then(function(response) {
+      if (response.ok) {
+        formMessage.textContent = "Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.";
+        formMessage.className = "form-message success";
+        form.reset();
+      } else {
+        throw new Error('Fehler beim Senden');
       }
-      formular.reset();
-      formMsg.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
-      formMsg.className = 'form-msg success';
     })
-    .catch(function () {
-      formMsg.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
-      formMsg.className = 'form-msg error';
+    .catch(function(error) {
+      formMessage.textContent = "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut oder rufen Sie uns direkt an.";
+      formMessage.className = "form-message error";
     });
   });
 </script>
