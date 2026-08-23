@@ -3,216 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mustermann Sanitär & Heizung GmbH | Musterstadt</title>
-<meta name="description" content="Mustermann Sanitär & Heizung GmbH – Ihr zuverlässiger Partner für Sanitär, Heizung und Klimatechnik in Musterstadt.">
+<title>KOMPASS Werkstatt | Elektriker in Rosenheim</title>
+<meta name="description" content="KOMPASS Werkstatt - Ihr zuverlässiger Elektriker in Rosenheim. Elektroinstallation, Reparaturen, Notdienst und mehr.">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
-    color: #2c3338;
+    color: #2b2f36;
     line-height: 1.6;
-    background: #f7f8fa;
+    background: #ffffff;
   }
   a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
   img { max-width: 100%; display: block; }
 
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header */
   header {
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     position: sticky;
     top: 0;
-    z-index: 100;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    z-index: 1000;
   }
-  .nav-container {
-    max-width: 1180px;
-    margin: 0 auto;
+  .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 24px;
+    padding: 16px 20px;
   }
   .logo {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1c3f5f;
+    color: #1a3a5c;
     letter-spacing: 0.5px;
   }
-  .logo span { color: #3d7ea6; }
+  .logo span {
+    color: #d98e04;
+  }
   nav ul {
-    list-style: none;
     display: flex;
     gap: 28px;
   }
   nav a {
+    font-weight: 600;
     font-size: 0.95rem;
-    font-weight: 500;
-    color: #2c3338;
+    color: #2b2f36;
     transition: color 0.2s;
   }
-  nav a:hover { color: #3d7ea6; }
-  .nav-toggle { display: none; }
-
-  .hero {
-    background: linear-gradient(135deg, #1c3f5f 0%, #2e5c81 60%, #3d7ea6 100%);
-    color: #ffffff;
-    padding: 90px 24px;
+  nav a:hover {
+    color: #d98e04;
   }
-  .hero-inner {
-    max-width: 1180px;
-    margin: 0 auto;
+  .header-phone {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: 600;
+    color: #1a3a5c;
   }
-  .hero-text { flex: 1 1 460px; }
-  .hero-text h1 {
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+  .menu-toggle svg { width: 28px; height: 28px; }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #1a3a5c 0%, #274c73 100%);
+    color: #fff;
+    padding: 90px 20px 100px;
+    text-align: center;
+  }
+  .hero h1 {
     font-size: 2.6rem;
-    line-height: 1.25;
-    margin-bottom: 18px;
     font-weight: 700;
+    margin-bottom: 18px;
+    line-height: 1.25;
   }
-  .hero-text p {
-    font-size: 1.1rem;
-    color: #dce6ee;
-    margin-bottom: 30px;
-    max-width: 520px;
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 640px;
+    margin: 0 auto 32px;
+    color: #d9e2ec;
   }
   .btn {
-    display: inline-block;
-    padding: 14px 30px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #d98e04;
+    color: #fff;
+    padding: 14px 32px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 1rem;
-    cursor: pointer;
     border: none;
-    transition: background 0.2s, transform 0.15s;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
   }
-  .btn-primary {
-    background: #ffffff;
-    color: #1c3f5f;
+  .btn:hover {
+    background: #b97803;
+    transform: translateY(-2px);
   }
-  .btn-primary:hover { background: #e2ebf2; transform: translateY(-2px); }
-  .hero-visual {
-    flex: 1 1 320px;
+  .btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  .btn-outline:hover {
+    background: #fff;
+    color: #1a3a5c;
+  }
+  .hero-buttons {
     display: flex;
+    gap: 16px;
     justify-content: center;
+    flex-wrap: wrap;
   }
-  .hero-icon-box {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 16px;
-    padding: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-icon-box svg { width: 140px; height: 140px; stroke: #ffffff; }
 
-  section { padding: 80px 24px; }
-  .section-inner { max-width: 1180px; margin: 0 auto; }
+  /* Section titles */
+  .section {
+    padding: 80px 20px;
+  }
+  .section-alt {
+    background: #f5f7fa;
+  }
   .section-title {
     text-align: center;
-    font-size: 2rem;
-    color: #1c3f5f;
-    margin-bottom: 12px;
-    font-weight: 700;
+    margin-bottom: 50px;
   }
-  .section-subtitle {
-    text-align: center;
-    color: #5c6773;
-    max-width: 620px;
-    margin: 0 auto 50px auto;
-    font-size: 1.02rem;
+  .section-title h2 {
+    font-size: 2rem;
+    color: #1a3a5c;
+    margin-bottom: 12px;
+  }
+  .section-title p {
+    color: #5a6270;
+    max-width: 600px;
+    margin: 0 auto;
   }
 
+  /* Services */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
   .service-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 34px 26px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    background: #fff;
+    border: 1px solid #e6e9ee;
+    border-radius: 10px;
+    padding: 32px 24px;
+    text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.08);
   }
   .service-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 10px;
-    background: #eaf2f8;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    background: #eef3f8;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 18px;
+    color: #1a3a5c;
   }
-  .service-icon svg { width: 26px; height: 26px; stroke: #1c3f5f; }
+  .service-icon svg { width: 28px; height: 28px; }
   .service-card h3 {
     font-size: 1.15rem;
-    color: #1c3f5f;
     margin-bottom: 10px;
+    color: #1a3a5c;
   }
-  .service-card p { color: #5c6773; font-size: 0.96rem; }
+  .service-card p {
+    color: #5a6270;
+    font-size: 0.95rem;
+  }
 
-  .about {
-    background: #ffffff;
+  /* Why us */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
   }
-  .about-grid {
-    display: flex;
+  .why-item {
+    text-align: center;
+    padding: 20px;
+  }
+  .why-item .service-icon {
+    background: #fff;
+    border: 2px solid #d98e04;
+    color: #d98e04;
+  }
+  .why-item h4 {
+    color: #1a3a5c;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+  .why-item p {
+    font-size: 0.9rem;
+    color: #5a6270;
+  }
+
+  /* About */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
-    flex-wrap: wrap;
   }
-  .about-text { flex: 1 1 420px; }
   .about-text h2 {
-    font-size: 1.9rem;
-    color: #1c3f5f;
-    margin-bottom: 18px;
-    font-weight: 700;
+    font-size: 2rem;
+    color: #1a3a5c;
+    margin-bottom: 20px;
   }
-  .about-text p { color: #5c6773; margin-bottom: 16px; }
-  .about-list { list-style: none; margin-top: 20px; }
-  .about-list li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-    color: #2c3338;
-    font-size: 0.98rem;
+  .about-text p {
+    color: #4a5160;
+    margin-bottom: 16px;
   }
-  .about-list svg { width: 20px; height: 20px; stroke: #3d7ea6; flex-shrink: 0; }
-  .about-visual {
-    flex: 1 1 320px;
-    background: #eaf2f8;
-    border-radius: 14px;
-    padding: 50px;
+  .about-image {
+    background: #1a3a5c;
+    border-radius: 12px;
+    height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #ffffff33;
   }
-  .about-visual svg { width: 160px; height: 160px; stroke: #1c3f5f; }
+  .about-image svg { width: 120px; height: 120px; }
 
-  .contact {
-    background: #f0f3f6;
-  }
-  .contact-grid {
+  /* Contact */
+  .contact-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
   }
   .contact-info {
-    background: #1c3f5f;
-    color: #ffffff;
-    border-radius: 14px;
+    background: #1a3a5c;
+    color: #fff;
     padding: 40px 32px;
+    border-radius: 12px;
   }
   .contact-info h3 {
     font-size: 1.4rem;
@@ -220,347 +261,409 @@
   }
   .contact-item {
     display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
     align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 22px;
   }
-  .contact-item svg {
-    width: 22px;
-    height: 22px;
-    stroke: #9fc4dd;
+  .contact-item .icon-box {
+    width: 42px;
+    height: 42px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
-    margin-top: 2px;
   }
-  .contact-item div { font-size: 0.96rem; color: #dce6ee; }
-  .contact-item strong { display: block; color: #ffffff; margin-bottom: 3px; font-size: 0.98rem; }
+  .contact-item .icon-box svg { width: 22px; height: 22px; }
+  .contact-item strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+  }
+  .contact-item span, .contact-item a {
+    color: #d9e2ec;
+    font-size: 0.95rem;
+  }
 
   .contact-form {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 40px 34px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    background: #fff;
+    border: 1px solid #e6e9ee;
+    border-radius: 12px;
+    padding: 40px 32px;
   }
-  .form-group { margin-bottom: 20px; }
+  .contact-form h3 {
+    color: #1a3a5c;
+    margin-bottom: 22px;
+    font-size: 1.4rem;
+  }
+  .form-group {
+    margin-bottom: 18px;
+  }
   .form-group label {
     display: block;
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #2c3338;
     margin-bottom: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #2b2f36;
   }
   .form-group input,
   .form-group textarea {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #d3dae0;
-    border-radius: 8px;
-    font-size: 0.96rem;
+    border: 1px solid #d3d9e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
     font-family: inherit;
-    color: #2c3338;
-    background: #fbfcfd;
     transition: border-color 0.2s;
   }
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #3d7ea6;
+    border-color: #1a3a5c;
   }
-  .form-group textarea { resize: vertical; min-height: 120px; }
-  .btn-submit {
-    background: #1c3f5f;
-    color: #ffffff;
+  .form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+  }
+  .form-submit {
     width: 100%;
-    padding: 14px;
+    justify-content: center;
+    background: #1a3a5c;
   }
-  .btn-submit:hover { background: #2e5c81; }
+  .form-submit:hover {
+    background: #12283f;
+  }
   .form-message {
     margin-top: 16px;
     padding: 14px;
-    border-radius: 8px;
-    font-size: 0.94rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
     display: none;
   }
   .form-message.success {
-    background: #e3f5e8;
-    color: #216e3f;
     display: block;
+    background: #e5f6ea;
+    color: #1e7a37;
+    border: 1px solid #b7e4c3;
   }
   .form-message.error {
-    background: #fbe6e6;
-    color: #a12c2c;
     display: block;
+    background: #fdeaea;
+    color: #a52121;
+    border: 1px solid #f3bcbc;
   }
 
+  /* Footer */
   footer {
-    background: #142c42;
-    color: #b9c8d4;
-    text-align: center;
-    padding: 30px 24px;
+    background: #12283f;
+    color: #b9c5d4;
+    padding: 40px 20px 24px;
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    max-width: 1140px;
+    margin: 0 auto 24px;
+  }
+  .footer-col h4 {
+    color: #fff;
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+  }
+  .footer-col p, .footer-col a {
     font-size: 0.9rem;
+    color: #b9c5d4;
+    display: block;
+    margin-bottom: 8px;
   }
-  footer a { color: #9fc4dd; }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #8b98a9;
+  }
 
-  @media (max-width: 860px) {
-    .contact-grid { grid-template-columns: 1fr; }
-    .about-grid { flex-direction: column; }
+  @media (max-width: 900px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .about { grid-template-columns: 1fr; }
+    .contact-wrapper { grid-template-columns: 1fr; }
   }
-  @media (max-width: 700px) {
-    nav ul {
+
+  @media (max-width: 640px) {
+    nav, .header-phone { display: none; }
+    .menu-toggle { display: block; }
+    nav.open {
+      display: flex;
       position: absolute;
       top: 100%;
       left: 0;
       right: 0;
-      background: #ffffff;
+      background: #fff;
       flex-direction: column;
       padding: 20px;
-      gap: 16px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
-      display: none;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
-    nav ul.open { display: flex; }
-    .nav-toggle {
-      display: flex;
+    nav.open ul {
       flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
+      gap: 16px;
+      width: 100%;
     }
-    .nav-toggle span {
-      width: 24px;
-      height: 2px;
-      background: #1c3f5f;
-    }
-    .hero-text h1 { font-size: 2rem; }
+    .hero h1 { font-size: 1.9rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="nav-container">
-    <div class="logo">Mustermann <span>Sanitär &amp; Heizung</span></div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
-      <ul id="navMenu">
+  <div class="header-inner">
+    <div class="logo">KOMPASS <span>Werkstatt</span></div>
+    <nav id="mainNav">
+      <ul>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
+    <div class="header-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>04908 03165090</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
 </header>
 
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <h1>Sanitär &amp; Heizung aus einer Hand – zuverlässig in Musterstadt</h1>
-      <p>Von der Reparatur über die Installation bis zur kompletten Heizungsmodernisierung: Wir sind Ihr erfahrener Ansprechpartner für alle Sanitär- und Heizungsanliegen.</p>
-      <a href="#kontakt" class="btn btn-primary">Jetzt Kontakt aufnehmen</a>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-icon-box">
-        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2C12 2 6 9 6 14a6 6 0 0 0 12 0c0-5-6-12-6-12z"></path>
-        </svg>
-      </div>
+  <div class="container">
+    <h1>Ihr zuverlässiger Elektriker in Rosenheim</h1>
+    <p>KOMPASS Werkstatt steht für saubere Elektroinstallationen, schnelle Reparaturen und kompetente Beratung – für Privathaushalte und Gewerbe.</p>
+    <div class="hero-buttons">
+      <a href="#kontakt" class="btn">Kostenlos anfragen</a>
+      <a href="tel:0490803165090" class="btn btn-outline">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Jetzt anrufen
+      </a>
     </div>
   </div>
 </section>
 
-<section id="leistungen">
-  <div class="section-inner">
-    <h2 class="section-title">Unsere Leistungen</h2>
-    <p class="section-subtitle">Professionelle Lösungen für Ihr Zuhause und Ihr Unternehmen – termingerecht, sauber und fachgerecht ausgeführt.</p>
+<section class="section" id="leistungen">
+  <div class="container">
+    <div class="section-title">
+      <h2>Unsere Leistungen</h2>
+      <p>Von der Kleinreparatur bis zur kompletten Elektroinstallation – wir sind Ihr Partner in Rosenheim und Umgebung.</p>
+    </div>
     <div class="services-grid">
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 7v5l3 3"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
         </div>
-        <h3>Notdienst</h3>
-        <p>Schnelle Hilfe bei Rohrbrüchen, Verstopfungen und Heizungsausfällen – auch außerhalb der Geschäftszeiten.</p>
+        <h3>Elektroinstallation</h3>
+        <p>Fachgerechte Neuinstallation und Modernisierung von Elektroanlagen in Wohn- und Geschäftsgebäuden.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="3" width="16" height="18" rx="2"></rect>
-            <path d="M9 7h6M9 11h6M9 15h4"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
-        <h3>Heizungsinstallation</h3>
-        <p>Beratung, Planung und Einbau moderner, energieeffizienter Heizsysteme für Ihr Zuhause.</p>
+        <h3>24h-Notdienst</h3>
+        <p>Bei Stromausfall oder elektrischen Störungen sind wir schnell für Sie vor Ort – zuverlässig und kompetent.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 12h16M4 6h16M4 18h16"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>
         </div>
-        <h3>Badsanierung</h3>
-        <p>Von der Planung bis zur Fliesenverlegung: Wir gestalten Ihr Traumbad komplett aus einer Hand.</p>
+        <h3>Sicherheitsprüfung</h3>
+        <p>Regelmäßige E-Check-Prüfungen für maximale Sicherheit in Ihrem Zuhause oder Betrieb.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2v20M2 12h20"></path>
-            <circle cx="12" cy="12" r="9"></circle>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M7 15h.01M11 15h2"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
         </div>
-        <h3>Wartung &amp; Reparatur</h3>
-        <p>Regelmäßige Wartung und schnelle Reparaturen halten Ihre Anlagen langfristig zuverlässig am Laufen.</p>
+        <h3>Smart Home</h3>
+        <p>Intelligente Steuerung von Licht, Heizung und Sicherheit für mehr Komfort in Ihrem Alltag.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 12l9-9 9 9M5 10v10h14V10"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
         </div>
-        <h3>Neubau &amp; Sanierung</h3>
-        <p>Komplette Sanitär- und Heizungsinstallation für Neubauten sowie umfassende Modernisierungen.</p>
+        <h3>Beleuchtungskonzepte</h3>
+        <p>Moderne, energieeffiziente Beleuchtungslösungen für Innen- und Außenbereiche.</p>
       </div>
-
       <div class="service-card">
         <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 3h6l1 4h4v4l-4 1v6l-4 1-4-1v-6l-4-1V7h4l1-4z"></path>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
-        <h3>Energieberatung</h3>
-        <p>Individuelle Beratung zu Fördermöglichkeiten und energiesparenden Heiztechnologien.</p>
+        <h3>Ladestationen (Wallbox)</h3>
+        <p>Installation von E-Auto-Ladestationen für Ihr Zuhause oder Ihren Betrieb – normkonform und sicher.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<section id="ueber-uns" class="about">
-  <div class="section-inner about-grid">
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Warum KOMPASS Werkstatt?</h2>
+      <p>Wir stehen für Qualität, Zuverlässigkeit und faire Preise – seit Jahren geschätzt von unseren Kunden in Rosenheim.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        </div>
+        <h4>Geprüfte Qualität</h4>
+        <p>Meisterbetrieb mit langjähriger Erfahrung</p>
+      </div>
+      <div class="why-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h4>Schnelle Reaktion</h4>
+        <p>Kurzfristige Termine, auch im Notfall</p>
+      </div>
+      <div class="why-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h4>Faire Preise</h4>
+        <p>Transparente Kostenvoranschläge ohne versteckte Gebühren</p>
+      </div>
+      <div class="why-item">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Persönliche Beratung</h4>
+        <p>Individuelle Lösungen für Ihre Anforderungen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ueber-uns">
+  <div class="container about">
     <div class="about-text">
-      <h2>Über Mustermann Sanitär &amp; Heizung GmbH</h2>
-      <p>Seit vielen Jahren betreuen wir Privat- und Geschäftskunden in Musterstadt und Umgebung rund um die Themen Sanitär, Heizung und Klimatechnik. Unser eingespieltes Team steht für saubere Arbeit, faire Preise und persönliche Beratung.</p>
-      <p>Wir legen Wert auf langfristige Kundenbeziehungen und moderne, nachhaltige Lösungen – von der ersten Beratung bis zur fertigen Umsetzung.</p>
-      <ul class="about-list">
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
-          Geprüfte Fachbetrieb-Qualität
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
-          Transparente Kostenvoranschläge
-        </li>
-        <li>
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
-          Termingerechte Ausführung
-        </li>
-      </ul>
+      <h2>Über KOMPASS Werkstatt</h2>
+      <p>Seit vielen Jahren sind wir als kompetenter Elektriker in Rosenheim und Umgebung tätig. Unser Team aus erfahrenen Fachkräften kümmert sich um jede Herausforderung – von der kleinen Steckdose bis zur kompletten Elektroplanung für Neubauten.</p>
+      <p>Wir legen großen Wert auf Qualität, Termintreue und eine ehrliche Beratung. Vertrauen Sie auf unsere Erfahrung und lassen Sie sich unverbindlich beraten.</p>
+      <a href="#kontakt" class="btn" style="background:#1a3a5c;">Beratung anfragen</a>
     </div>
-    <div class="about-visual">
-      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
-        <path d="M7 8h10M7 12h10M7 16h6"></path>
-      </svg>
+    <div class="about-image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 11-14h-7l1-6z"/></svg>
     </div>
   </div>
 </section>
 
-<section id="kontakt" class="contact">
-  <div class="section-inner">
-    <h2 class="section-title">Kontakt</h2>
-    <p class="section-subtitle">Haben Sie Fragen oder benötigen Sie ein Angebot? Kontaktieren Sie uns – wir melden uns schnellstmöglich bei Ihnen.</p>
-    <div class="contact-grid">
-
+<section class="section section-alt" id="kontakt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Kontaktieren Sie uns</h2>
+      <p>Wir freuen uns auf Ihre Anfrage – gerne beraten wir Sie persönlich oder telefonisch.</p>
+    </div>
+    <div class="contact-wrapper">
       <div class="contact-info">
-        <h3>Mustermann Sanitär &amp; Heizung GmbH</h3>
-
+        <h3>Kontaktdaten</h3>
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"></path>
-            <circle cx="12" cy="10" r="2.5"></circle>
-          </svg>
-          <div>
-            <strong>Adresse</strong>
-            Musterstraße 1, 12345 Musterstadt
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-        </div>
-
-        <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.99.36 1.96.68 2.89a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.19-1.25a2 2 0 0 1 2.11-.45c.93.32 1.9.55 2.89.68A2 2 0 0 1 22 16.92z"></path>
-          </svg>
           <div>
             <strong>Telefon</strong>
-            +49 123 456789
+            <a href="tel:0490803165090">04908 03165090</a>
           </div>
         </div>
-
         <div class="contact-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="9"></circle>
-            <path d="M12 7v5l3 3"></path>
-          </svg>
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <strong>Adresse</strong>
+            <span>Kolbermoorer Str. 34, 83026 Rosenheim, Deutschland</span>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
           <div>
             <strong>Öffnungszeiten</strong>
-            Mo–Fr: 08:00–17:00 Uhr<br>
-            Notdienst nach Vereinbarung
+            <span>Mo–Fr: 07:30–17:00 Uhr</span>
+            <span>Notdienst: rund um die Uhr</span>
           </div>
         </div>
       </div>
 
       <div class="contact-form">
+        <h3>Nachricht senden</h3>
         <form id="kontaktForm">
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+            <input type="text" id="name" name="name" required placeholder="Ihr Name">
           </div>
           <div class="form-group">
             <label for="kontakt">Telefon oder E-Mail</label>
-            <input type="text" id="kontakt" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail-Adresse">
+            <input type="text" id="kontakt" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail">
           </div>
           <div class="form-group">
             <label for="nachricht">Nachricht</label>
-            <textarea id="nachricht" name="nachricht" required placeholder="Wie können wir Ihnen helfen?"></textarea>
+            <textarea id="nachricht" name="nachricht" required placeholder="Ihre Nachricht an uns"></textarea>
           </div>
-          <button type="submit" class="btn btn-submit">Nachricht senden</button>
+          <button type="submit" class="btn form-submit">Nachricht senden</button>
           <div id="formMessage" class="form-message"></div>
         </form>
       </div>
-
     </div>
   </div>
 </section>
 
 <footer>
-  <p>&copy; <span id="jahr"></span> Mustermann Sanitär &amp; Heizung GmbH – Musterstraße 1, 12345 Musterstadt</p>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>KOMPASS Werkstatt</h4>
+      <p>Ihr Elektriker in Rosenheim für Installation, Wartung und Notdienst.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <a href="tel:0490803165090">04908 03165090</a>
+      <p>Kolbermoorer Str. 34, 83026 Rosenheim</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-uns">Über uns</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; <span id="jahr"></span> KOMPASS Werkstatt – Alle Rechte vorbehalten.
+  </div>
 </footer>
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  const navToggle = document.getElementById('navToggle');
-  const navMenu = document.getElementById('navMenu');
-  navToggle.addEventListener('click', function () {
-    navMenu.classList.toggle('open');
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('open');
   });
 
   const form = document.getElementById('kontaktForm');
   const formMessage = document.getElementById('formMessage');
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const kontakt = document.getElementById('kontakt').value.trim();
-    const nachricht = document.getElementById('nachricht').value.trim();
+    const name = document.getElementById('name').value;
+    const kontakt = document.getElementById('kontakt').value;
+    const nachricht = document.getElementById('nachricht').value;
 
     formMessage.className = 'form-message';
     formMessage.style.display = 'none';
@@ -571,24 +674,25 @@
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        firma: 'Mustermann Sanitär & Heizung GmbH',
+        firma: 'KOMPASS Werkstatt',
         name: name,
         kontakt: kontakt,
         nachricht: nachricht
       })
     })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error('Netzwerkfehler');
-        }
-        formMessage.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich übermittelt. Wir melden uns in Kürze bei Ihnen.';
+    .then(function(response) {
+      if (response.ok) {
+        formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
         formMessage.className = 'form-message success';
         form.reset();
-      })
-      .catch(function () {
-        formMessage.textContent = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns direkt an.';
-        formMessage.className = 'form-message error';
-      });
+      } else {
+        throw new Error('Fehler beim Senden');
+      }
+    })
+    .catch(function() {
+      formMessage.textContent = 'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
+      formMessage.className = 'form-message error';
+    });
   });
 </script>
 
