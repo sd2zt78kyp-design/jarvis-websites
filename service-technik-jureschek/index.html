@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service & Technik Jureschek | Elektriker Rosenheim</title>
+<meta name="description" content="Service & Technik Jureschek - Ihr zuverlässiger Elektriker in Rosenheim und Umgebung. Elektroinstallation, Reparaturen, Notdienst und mehr.">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #263238;
+    line-height: 1.6;
+    background-color: #f7f9fa;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  header {
+    background-color: #0d2436;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .logo span {
+    color: #f5a623;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul li a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #f5a623;
+  }
+
+  .header-phone {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 26px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(rgba(13,36,54,0.85), rgba(13,36,54,0.85)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800"><rect width="1200" height="800" fill="%231a3a52"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 0 90px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+    line-height: 1.3;
+  }
+
+  .hero h1 span {
+    color: #f5a623;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto 32px;
+    color: #dfe6ea;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: #f5a623;
+    color: #0d2436;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    margin: 0 8px 12px;
+  }
+
+  .btn:hover {
+    background-color: #e0951a;
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+
+  .btn-outline:hover {
+    background: #fff;
+    color: #0d2436;
+  }
+
+  /* Trust bar */
+  .trust-bar {
+    background-color: #ffffff;
+    padding: 24px 0;
+    border-bottom: 1px solid #e4e9ec;
+  }
+
+  .trust-bar .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .trust-item {
+    flex: 1;
+    min-width: 150px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #0d2436;
+  }
+
+  .trust-item span {
+    display: block;
+    font-size: 1.8rem;
+    color: #f5a623;
+    margin-bottom: 6px;
+  }
+
+  /* Section titles */
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+    color: #0d2436;
+    margin-bottom: 12px;
+  }
+
+  .section-title p {
+    color: #607d8b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-title .underline {
+    width: 60px;
+    height: 4px;
+    background-color: #f5a623;
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 34px 26px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #f5a623;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .service-icon {
+    width: 54px;
+    height: 54px;
+    background-color: #0d2436;
+    color: #f5a623;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #0d2436;
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    color: #607d8b;
+    font-size: 0.95rem;
+  }
+
+  /* About */
+  .about {
+    background-color: #eef2f4;
+  }
+
+  .about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .about-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    color: #0d2436;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    color: #45575f;
+    margin-bottom: 16px;
+  }
+
+  .about-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  .about-list li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    color: #263238;
+    font-weight: 500;
+  }
+
+  .about-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #f5a623;
+    font-weight: 700;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .about-image-box {
+    background: linear-gradient(135deg, #0d2436, #1c4a68);
+    border-radius: 10px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f5a623;
+    font-size: 4rem;
+  }
+
+  /* CTA */
+  .cta {
+    background-color: #0d2436;
+    color: #fff;
+    text-align: center;
+    padding: 70px 0;
+  }
+
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .cta p {
+    color: #cfd8dc;
+    margin-bottom: 30px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact */
+  .contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .contact-info, .contact-form {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .contact-info h3 {
+    color: #0d2436;
+    margin-bottom: 22px;
+    font-size: 1.4rem;
+  }
+
+  .contact-detail {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 46px;
+    height: 46px;
+    background-color: #f5a623;
+    color: #0d2436;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-detail h4 {
+    font-size: 1rem;
+    color: #0d2436;
+    margin-bottom: 4px;
+  }
+
+  .contact-detail p, .contact-detail a {
+    color: #607d8b;
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    background-color: #fff;
+    padding: 36px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+
+  .contact-form h3 {
+    color: #0d2436;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #45575f;
+    font-weight: 600;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #f5a623;
+  }
+
+  .form-submit {
+    background-color: #f5a623;
+    color: #0d2436;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  .form-submit:hover {
+    background-color: #e0951a;
+  }
+
+  /* Map */
+  .map-section {
+    height: 350px;
+    background: #d7dee1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #607d8b;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #081824;
+    color: #b0bec5;
+    padding: 40px 0 20px;
+  }
+
+  .footer-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-col {
+    flex: 1;
+    min-width: 220px;
+  }
+
+  .footer-col h4 {
+    color: #fff;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+  }
+
+  .footer-col p, .footer-col a {
+    color: #90a4ae;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .footer-col a:hover {
+    color: #f5a623;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #1c2e3a;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #78909c;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav {
+      position: fixed;
+      top: 66px;
+      left: 0;
+      right: 0;
+      background-color: #0d2436;
+      flex-direction: column;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    nav.open {
+      max-height: 400px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      padding: 20px 0;
+      gap: 0;
+    }
+
+    nav ul li {
+      padding: 14px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+    .hero h1 {
+      font-size: 1.9rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding: 70px 0 60px;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 auto 14px;
+      width: 90%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">Service & Technik <span>Jureschek</span></div>
+    <div class="menu-toggle" onclick="document.getElementById('mainNav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="tel:015221626271">01522 1626271</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Ihr zuverlässiger <span>Elektriker</span> in Rosenheim</h1>
+    <p>Service & Technik Jureschek steht für saubere Elektroinstallation, schnelle Reparaturen und kompetente Beratung – für Privat- und Gewerbekunden in Rosenheim und Umgebung.</p>
+    <a href="tel:015221626271" class="btn">Jetzt anrufen</a>
+    <a href="#kontakt" class="btn btn-outline">Kontakt aufnehmen</a>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item"><span>⚡</span>Elektroinstallation</div>
+    <div class="trust-item"><span>🛠️</span>Reparaturservice</div>
+    <div class="trust-item"><span>🏠</span>Privat & Gewerbe</div>
+    <div class="trust-item"><span>📍</span>Rosenheim & Umgebung</div>
+  </div>
+</div>
+
+<section class="section" id="leistungen">
+  <div class="container">
+    <div class="section-title">
+      <h2>Unsere Leistungen</h2>
+      <div class="underline"></div>
+      <p>Von der kleinen Reparatur bis zur kompletten Elektroinstallation – wir sind Ihr Partner für alle elektrotechnischen Aufgaben.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Elektroinstallation</h3>
+        <p>Fachgerechte Installation von Leitungen, Steckdosen, Schaltern und Beleuchtungssystemen in Neubau und Bestand.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <h3>Reparatur & Wartung</h3>
+        <p>Schnelle Fehlerdiagnose und Behebung von elektrischen Störungen – zuverlässig und termingerecht.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Beleuchtungstechnik</h3>
+        <p>Moderne und energieeffiziente Beleuchtungslösungen für Wohn- und Gewerberäume.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Gewerbeinstallation</h3>
+        <p>Elektroplanung und -umsetzung für Büros, Ladenflächen und gewerbliche Objekte.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔌</div>
+        <h3>Prüfung & Sicherheit</h3>
+        <p>Elektroprüfungen nach aktuellen Normen zur Sicherstellung der Betriebssicherheit.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📞</div>
+        <h3>Notdienst</h3>
+        <p>Bei akuten elektrischen Problemen sind wir schnell und unkompliziert für Sie erreichbar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="ueber-uns">
+  <div class="container about-flex">
+    <div class="about-text">
+      <h2>Warum Service & Technik Jureschek?</h2>
+      <p>Als erfahrener Elektriker aus Kolbermoor betreuen wir Kunden in Rosenheim und der gesamten Umgebung. Unser Anspruch: saubere Arbeit, faire Preise und persönliche Beratung auf Augenhöhe.</p>
+      <p>Ob kleine Reparatur oder umfangreiche Installation – wir setzen jedes Projekt zuverlässig und termingerecht um.</p>
+      <ul class="about-list">
+        <li>Langjährige Erfahrung im Elektrohandwerk</li>
+        <li>Transparente und faire Preisgestaltung</li>
+        <li>Termintreue und saubere Ausführung</li>
+        <li>Persönliche Beratung vor Ort</li>
+      </ul>
+    </div>
+    <div class="about-image">
+      <div class="about-image-box">⚡</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Elektroproblem? Wir helfen schnell!</h2>
+    <p>Rufen Sie uns direkt an oder senden Sie uns eine Nachricht – wir melden uns umgehend bei Ihnen zurück.</p>
+    <a href="tel:015221626271" class="btn">01522 1626271</a>
+  </div>
+</section>
+
+<section class="section" id="kontakt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Kontakt</h2>
+      <div class="underline"></div>
+      <p>Wir freuen uns auf Ihre Anfrage – schnell, unkompliziert und persönlich.</p>
+    </div>
+    <div class="contact-flex">
+      <div class="contact-info">
+        <h3>Kontaktdaten</h3>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Theodor-Storm-Straße<br>83059 Kolbermoor<br>Deutschland</p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:015221626271">01522 1626271</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🕒</div>
+          <div>
+            <h4>Einsatzgebiet</h4>
+            <p>Rosenheim, Kolbermoor und Umgebung</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Nachricht senden</h3>
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ihre Telefonnummer">
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ihre Anfrage" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Nachricht senden</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="map-section">
+  Standort: Theodor-Storm-Straße, 83059 Kolbermoor – Karte hier einbindbar
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-flex">
+      <div class="footer-col">
+        <h4>Service & Technik Jureschek</h4>
+        <p>Ihr Elektriker in Rosenheim und Umgebung – zuverlässig, fachkundig und persönlich.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:015221626271">01522 1626271</a>
+        <p>Theodor-Storm-Straße, 83059 Kolbermoor</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Service & Technik Jureschek – Alle Rechte vorbehalten.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
