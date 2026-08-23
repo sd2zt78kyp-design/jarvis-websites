@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KOMPASS Werkstatt | Elektriker in Rosenheim</title>
+<meta name="description" content="KOMPASS Werkstatt - Ihr zuverlässiger Elektriker in Rosenheim. Elektroinstallationen, Reparaturen, Notdienst und mehr.">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #2c3e50;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  /* Header */
+  header {
+    background-color: #1c2b39;
+    color: #fff;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .logo span {
+    color: #f0a500;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  nav ul li a {
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #f0a500;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, rgba(28,43,57,0.92), rgba(28,43,57,0.75)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="800" height="600" fill="%23223243"/><circle cx="700" cy="80" r="150" fill="%232a3d52"/><circle cx="100" cy="500" r="200" fill="%23233444"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 110px 5% 100px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 32px;
+    color: #dbe2e8;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    background-color: #f0a500;
+    color: #1c2b39;
+    padding: 14px 34px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background-color: #ffb823;
+    transform: translateY(-2px);
+  }
+
+  /* Section spacing */
+  section {
+    padding: 80px 5%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 2.1rem;
+    color: #1c2b39;
+    margin-bottom: 12px;
+  }
+
+  .section-title p {
+    color: #6b7c8c;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-title .underline {
+    width: 60px;
+    height: 4px;
+    background-color: #f0a500;
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+  }
+
+  .service-card {
+    background-color: #f7f9fb;
+    border-radius: 12px;
+    padding: 34px 26px;
+    text-align: center;
+    border: 1px solid #e7ecf0;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(28,43,57,0.1);
+  }
+
+  .service-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 20px;
+    background-color: #1c2b39;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .service-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #f0a500;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #1c2b39;
+  }
+
+  .service-card p {
+    color: #5f7080;
+    font-size: 0.98rem;
+  }
+
+  /* About / Why us */
+  .about-section {
+    background-color: #f7f9fb;
+    padding: 80px 5%;
+  }
+
+  .about-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .about-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    color: #1c2b39;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    color: #5f7080;
+    margin-bottom: 16px;
+  }
+
+  .about-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  .about-list li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #2c3e50;
+    font-weight: 500;
+  }
+
+  .check {
+    width: 22px;
+    height: 22px;
+    background-color: #f0a500;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1c2b39;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 280px;
+    height: 320px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1c2b39, #2a3d52);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-image svg {
+    width: 140px;
+    height: 140px;
+    fill: #f0a500;
+    opacity: 0.9;
+  }
+
+  /* Contact */
+  .contact-section {
+    background-color: #1c2b39;
+    color: #fff;
+  }
+
+  .contact-section .section-title h2 {
+    color: #fff;
+  }
+
+  .contact-section .section-title p {
+    color: #b9c5cf;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .contact-card {
+    background-color: #24384a;
+    padding: 32px 24px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .contact-card .icon {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 16px;
+    background-color: #f0a500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-card .icon svg {
+    width: 26px;
+    height: 26px;
+    fill: #1c2b39;
+  }
+
+  .contact-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+  }
+
+  .contact-card p, .contact-card a {
+    color: #d7dfe6;
+    font-size: 0.98rem;
+  }
+
+  .contact-card a:hover {
+    color: #f0a500;
+  }
+
+  .contact-cta {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #14202b;
+    color: #94a4b3;
+    text-align: center;
+    padding: 26px 5%;
+    font-size: 0.9rem;
+  }
+
+  footer a {
+    color: #f0a500;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    nav ul {
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 60px 5%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">KOMPASS <span>Werkstatt</span></div>
+  <nav>
+    <ul>
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Ihr Elektriker in Rosenheim – zuverlässig &amp; fachkundig</h1>
+  <p>KOMPASS Werkstatt steht für professionelle Elektroinstallationen, schnelle Reparaturen und kompetente Beratung – für Privat- und Geschäftskunden in Rosenheim und Umgebung.</p>
+  <a href="#kontakt" class="btn-primary">Jetzt Kontakt aufnehmen</a>
+</section>
+
+<section id="leistungen">
+  <div class="section-title">
+    <h2>Unsere Leistungen</h2>
+    <div class="underline"></div>
+    <p>Von der Neuinstallation bis zum Notdienst – wir sind Ihr kompetenter Partner für alle elektrotechnischen Anliegen.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 11-14h-8l1-6z"/></svg>
+      </div>
+      <h3>Elektroinstallation</h3>
+      <p>Fachgerechte Planung und Installation elektrischer Anlagen in Neubau und Bestand.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a1 1 0 0 1 1 1v2h2a1 1 0 0 1 1 1v2h1a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3h-1v2a1 1 0 0 1-1 1h-2v2a1 1 0 0 1-2 0v-2H9a1 1 0 0 1-1-1v-2H7a3 3 0 0 1-3-3v-3a3 3 0 0 1 3-3h1V6a1 1 0 0 1 1-1h2V3a1 1 0 0 1 1-1z"/></svg>
+      </div>
+      <h3>Reparaturservice</h3>
+      <p>Schnelle und zuverlässige Behebung von elektrischen Störungen und Defekten.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      </div>
+      <h3>24-Stunden Notdienst</h3>
+      <p>Bei Stromausfall oder Störung sind wir schnell für Sie vor Ort erreichbar.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 2v2H4v2h1v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6h1V4h-5V2H9zm2 6h2v10h-2V8zm-4 0h2v10H7V8zm8 0h2v10h-2V8z"/></svg>
+      </div>
+      <h3>Smart Home</h3>
+      <p>Moderne Haussteuerung und intelligente Vernetzung für mehr Komfort und Effizienz.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l9 4.9V17L12 22l-9-5.1V6.9L12 2zm0 2.3L5 8v8l7 3.9 7-3.9V8l-7-3.7zM11 7h2v6h-2V7zm0 8h2v2h-2v-2z"/></svg>
+      </div>
+      <h3>Sicherheitsprüfung</h3>
+      <p>E-Check und Prüfung elektrischer Anlagen nach aktuellen Sicherheitsstandards.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm4 0h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM3 3v4h18V3H3zm0 14v4h18v-4H3z"/></svg>
+      </div>
+      <h3>Beleuchtungskonzepte</h3>
+      <p>Individuelle und energieeffiziente Lichtlösungen für Wohn- und Geschäftsräume.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="ueber-uns">
+  <div class="about-inner">
+    <div class="about-text">
+      <h2>Warum KOMPASS Werkstatt?</h2>
+      <p>Als erfahrener Elektrofachbetrieb in Rosenheim legen wir großen Wert auf Qualität, Termintreue und transparente Kommunikation. Unser Team steht Ihnen mit Fachwissen und langjähriger Erfahrung zur Seite.</p>
+      <ul class="about-list">
+        <li><span class="check">✓</span> Qualifizierte Elektrofachkräfte</li>
+        <li><span class="check">✓</span> Faire und transparente Preise</li>
+        <li><span class="check">✓</span> Schnelle Termine &amp; Notdienst</li>
+        <li><span class="check">✓</span> Regional verwurzelt in Rosenheim</li>
+      </ul>
+    </div>
+    <div class="about-image">
+      <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 11-14h-8l1-6z"/></svg>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section" id="kontakt">
+  <div class="section-title">
+    <h2>Kontaktieren Sie uns</h2>
+    <div class="underline"></div>
+    <p>Wir freuen uns auf Ihre Anfrage – rufen Sie uns an oder besuchen Sie uns vor Ort.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      </div>
+      <h3>Adresse</h3>
+      <p>Kolbermoorer Str. 34<br>83026 Rosenheim<br>Deutschland</p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/></svg>
+      </div>
+      <h3>Telefon</h3>
+      <p><a href="tel:0490803165090">04908 03165090</a></p>
+    </div>
+    <div class="contact-card">
+      <div class="icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>
+      </div>
+      <h3>Öffnungszeiten</h3>
+      <p>Mo–Fr: 07:30–17:00 Uhr<br>Sa: nach Vereinbarung</p>
+    </div>
+  </div>
+  <div class="contact-cta">
+    <a href="tel:0490803165090" class="btn-primary">Jetzt anrufen</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 KOMPASS Werkstatt – Elektriker in Rosenheim. Alle Rechte vorbehalten.</p>
+  <p>Kolbermoorer Str. 34, 83026 Rosenheim | <a href="tel:0490803165090">04908 03165090</a></p>
+</footer>
+
+</body>
+</html>
