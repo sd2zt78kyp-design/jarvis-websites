@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fritz Plank | Elektriker in Rosenheim</title>
+<meta name="description" content="Fritz Plank – Ihr zuverlässiger Elektriker in Rosenheim. Elektroinstallationen, Reparaturen, Wartung und mehr aus einer Hand.">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #2b2f33;
+    line-height: 1.6;
+    background-color: #ffffff;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  header {
+    background-color: #0d2b3e;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .logo span {
+    color: #f0a500;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  nav ul li a {
+    color: #e6e6e6;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: #f0a500;
+  }
+
+  .call-btn {
+    background-color: #f0a500;
+    color: #0d2b3e !important;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .call-btn:hover {
+    background-color: #d99400;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, rgba(13,43,62,0.92), rgba(13,43,62,0.85)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="800" height="600" fill="%23123a52"/><circle cx="700" cy="80" r="120" fill="%23163f5c"/><circle cx="60" cy="500" r="180" fill="%23123a52"/></svg>');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 100px 0 90px;
+  }
+
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 700px;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 18px;
+    line-height: 1.2;
+  }
+
+  .hero h1 span {
+    color: #f0a500;
+  }
+
+  .hero p {
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+    color: #dbe4ea;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background-color: #f0a500;
+    color: #0d2b3e;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #d99400;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background-color: #ffffff;
+    color: #0d2b3e;
+  }
+
+  /* Sections general */
+  section {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-title h2 {
+    font-size: 2rem;
+    color: #0d2b3e;
+    margin-bottom: 10px;
+  }
+
+  .section-title p {
+    color: #667380;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .section-title .underline {
+    width: 60px;
+    height: 4px;
+    background-color: #f0a500;
+    margin: 14px auto 0;
+    border-radius: 2px;
+  }
+
+  /* Services */
+  .services {
+    background-color: #f5f8fa;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background-color: #ffffff;
+    padding: 32px 26px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid #f0a500;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+  .service-icon {
+    width: 54px;
+    height: 54px;
+    background-color: #0d2b3e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+  }
+
+  .service-icon svg {
+    width: 26px;
+    height: 26px;
+    fill: #f0a500;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+    color: #0d2b3e;
+    margin-bottom: 10px;
+  }
+
+  .service-card p {
+    color: #5b6672;
+    font-size: 0.97rem;
+  }
+
+  /* About */
+  .about .container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .about-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    color: #0d2b3e;
+    margin-bottom: 20px;
+  }
+
+  .about-text p {
+    color: #5b6672;
+    margin-bottom: 16px;
+  }
+
+  .about-image {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .about-image .placeholder {
+    background: linear-gradient(135deg, #0d2b3e, #163f5c);
+    border-radius: 14px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f0a500;
+  }
+
+  .about-image .placeholder svg {
+    width: 100px;
+    height: 100px;
+    fill: #f0a500;
+    opacity: 0.85;
+  }
+
+  .about-list {
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  .about-list li {
+    padding: 8px 0;
+    color: #2b2f33;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .about-list li::before {
+    content: "✓";
+    color: #f0a500;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  /* Why us */
+  .why-us {
+    background-color: #0d2b3e;
+    color: #ffffff;
+  }
+
+  .why-us .section-title h2 {
+    color: #ffffff;
+  }
+
+  .why-us .section-title p {
+    color: #b9c6d1;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    text-align: center;
+  }
+
+  .why-item {
+    padding: 20px;
+  }
+
+  .why-item .num {
+    font-size: 2.2rem;
+    color: #f0a500;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .why-item p {
+    color: #cddbe4;
+    font-size: 0.95rem;
+  }
+
+  /* Contact */
+  .contact {
+    background-color: #f5f8fa;
+  }
+
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .contact-info {
+    background-color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  }
+
+  .contact-info h3 {
+    color: #0d2b3e;
+    font-size: 1.4rem;
+    margin-bottom: 24px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  .contact-item .icon {
+    width: 44px;
+    height: 44px;
+    background-color: #f0a500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item .icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #0d2b3e;
+  }
+
+  .contact-item h4 {
+    color: #0d2b3e;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .contact-item p, .contact-item a {
+    color: #5b6672;
+    font-size: 0.95rem;
+  }
+
+  .contact-item a {
+    color: #0d2b3e;
+    font-weight: 600;
+  }
+
+  .hours-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+  }
+
+  .hours-table td {
+    padding: 6px 0;
+    font-size: 0.93rem;
+    color: #5b6672;
+    border-bottom: 1px solid #eef1f3;
+  }
+
+  .hours-table td:last-child {
+    text-align: right;
+    color: #0d2b3e;
+    font-weight: 600;
+  }
+
+  .map-box {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    min-height: 300px;
+  }
+
+  .map-box iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    border: 0;
+    display: block;
+  }
+
+  /* CTA banner */
+  .cta-banner {
+    background: linear-gradient(135deg, #f0a500, #d99400);
+    color: #0d2b3e;
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  .cta-banner p {
+    margin-bottom: 24px;
+    font-size: 1.05rem;
+  }
+
+  .cta-banner .btn-primary {
+    background-color: #0d2b3e;
+    color: #ffffff;
+  }
+
+  .cta-banner .btn-primary:hover {
+    background-color: #143a52;
+  }
+
+  /* Footer */
+  footer {
+    background-color: #08202e;
+    color: #b9c6d1;
+    padding: 40px 0 20px;
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+
+  .footer-col h4 {
+    color: #ffffff;
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+  }
+
+  .footer-col p, .footer-col a {
+    color: #9fb0bd;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .footer-col a:hover {
+    color: #f0a500;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #163a4d;
+    padding-top: 18px;
+    font-size: 0.85rem;
+    color: #7f909c;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .contact-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .about .container {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Fritz Plank <span>Elektro</span></div>
+    <nav>
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#warum-wir">Warum wir</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <a href="tel:0803145593" class="call-btn">📞 08031 45593</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Ihr Elektriker in Rosenheim – <span>zuverlässig &amp; fachkundig</span></h1>
+    <p>Seit vielen Jahren steht Fritz Plank in Rosenheim-Fürstätt für saubere Elektroinstallationen, schnelle Reparaturen und persönliche Beratung. Handwerk, dem Sie vertrauen können.</p>
+    <div class="hero-buttons">
+      <a href="tel:0803145593" class="btn-primary">Jetzt anrufen</a>
+      <a href="#kontakt" class="btn-secondary">Kontakt aufnehmen</a>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="leistungen">
+  <div class="container">
+    <div class="section-title">
+      <h2>Unsere Leistungen</h2>
+      <div class="underline"></div>
+      <p>Von der klassischen Elektroinstallation bis zum Notdienst – wir kümmern uns um Ihre elektrischen Anlagen.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M11 21h-1l1-7H7l6-11h1l-1 7h4l-6 11z"/></svg>
+        </div>
+        <h3>Elektroinstallation</h3>
+        <p>Fachgerechte Neuinstallation und Modernisierung von elektrischen Anlagen in Wohn- und Gewerbeimmobilien.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zm-10-6a1 1 0 00-1 1v5a1 1 0 00.29.71l3 3a1 1 0 001.42-1.42L13 11.59V7a1 1 0 00-1-1z"/></svg>
+        </div>
+        <h3>Reparatur &amp; Störungssuche</h3>
+        <p>Schnelle und präzise Fehlerdiagnose bei Störungen sowie zuverlässige Reparatur aller elektrischen Systeme.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7v6c0 5.25 3.75 9.75 10 11 6.25-1.25 10-5.75 10-11V7l-10-5z"/></svg>
+        </div>
+        <h3>Sicherheitsprüfungen</h3>
+        <p>E-Check und regelmäßige Wartung Ihrer Anlagen für maximale Sicherheit in Haus und Betrieb.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 2h12v4H6zM4 8h16v14H4zM9 12h6v6H9z"/></svg>
+        </div>
+        <h3>Schalter &amp; Steckdosen</h3>
+        <p>Montage, Austausch und Erweiterung von Schaltern, Steckdosen und Beleuchtungssystemen.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 3 2 5 3 6.5V17h8v-1.5c1-1.5 3-3.5 3-6.5a7 7 0 00-7-7zM9 20h6v1a1 1 0 01-1 1h-4a1 1 0 01-1-1v-1z"/></svg>
+        </div>
+        <h3>Beleuchtungskonzepte</h3>
+        <p>Individuelle Beleuchtungslösungen für Wohnräume, Büros und Außenbereiche – funktional und stimmungsvoll.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 2L3 14h7l-1 8 11-13h-7l1-7z"/></svg>
+        </div>
+        <h3>Smart Home &amp; E-Mobilität</h3>
+        <p>Installation von Wallboxen und smarten Haussteuerungen für zukunftsfähige Elektrotechnik.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="ueber-uns">
+  <div class="container">
+    <div class="about-image">
+      <div class="placeholder">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 4 8 7 13 3-5 7-9.13 7-13 0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+      </div>
+    </div>
+    <div class="about-text">
+      <h2>Fritz Plank – Elektromeister aus Rosenheim</h2>
+      <p>Als erfahrener Elektriker mit Sitz in Rosenheim-Fürstätt biete ich Ihnen kompetente Elektroarbeiten für Privathaushalte, Gewerbebetriebe und Neubauten. Präzision, Zuverlässigkeit und faire Preise stehen bei mir an erster Stelle.</p>
+      <p>Ob kleine Reparatur oder umfangreiche Installation – ich sorge dafür, dass bei Ihnen alles sicher und einwandfrei läuft.</p>
+      <ul class="about-list">
+        <li>Meisterbetrieb mit langjähriger Erfahrung</li>
+        <li>Termintreue und transparente Kostenvoranschläge</li>
+        <li>Persönliche Beratung vor Ort</li>
+        <li>Regionale Verwurzelung in Rosenheim</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="why-us" id="warum-wir">
+  <div class="container">
+    <div class="section-title">
+      <h2>Warum Fritz Plank?</h2>
+      <div class="underline"></div>
+      <p>Qualität, Erfahrung und persönlicher Service – das macht uns aus.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="num">20+</div>
+        <p>Jahre Erfahrung im Elektrohandwerk</p>
+      </div>
+      <div class="why-item">
+        <div class="num">100%</div>
+        <p>Zufriedenheit unserer Kunden in Rosenheim</p>
+      </div>
+      <div class="why-item">
+        <div class="num">24h</div>
+        <p>Schnelle Reaktionszeiten bei Notfällen</p>
+      </div>
+      <div class="why-item">
+        <div class="num">Fair</div>
+        <p>Transparente und faire Preisgestaltung</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="section-title">
+      <h2>Kontakt</h2>
+      <div class="underline"></div>
+      <p>Nehmen Sie Kontakt mit uns auf – wir beraten Sie gerne zu Ihrem Elektroprojekt.</p>
+    </div>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3>Kontaktdaten</h3>
+
+        <div class="contact-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 3.87 4 8 7 13 3-5 7-9.13 7-13 0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg>
+          </div>
+          <div>
+            <h4>Adresse</h4>
+            <p>Am Gries 11A<br>83026 Rosenheim-Fürstätt<br>Deutschland</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </div>
+          <div>
+            <h4>Telefon</h4>
+            <a href="tel:0803145593">08031 45593</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          </div>
+          <div>
+            <h4>Öffnungszeiten</h4>
+            <table class="hours-table">
+              <tr><td>Montag – Freitag</td><td>07:30 – 17:00</td></tr>
+              <tr><td>Samstag</td><td>Nach Vereinbarung</td></tr>
+              <tr><td>Sonntag</td><td>Geschlossen</td></tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="map-box">
+        <iframe
+          src="https://www.google.com/maps?q=Am+Gries+11A,+83026+Rosenheim-F%C3%BCrst%C3%A4tt,+Germany&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2>Bereit für Ihr nächstes Elektroprojekt?</h2>
+  <p>Rufen Sie uns an oder besuchen Sie uns vor Ort in Rosenheim-Fürstätt.</p>
+  <a href="tel:0803145593" class="btn-primary">08031 45593 anrufen</a>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Fritz Plank</h4>
+        <p>Elektriker in Rosenheim</p>
+        <p>Am Gries 11A<br>83026 Rosenheim-Fürstätt</p>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <a href="tel:0803145593">08031 45593</a>
+        <a href="#kontakt">Kontaktformular</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ueber-uns">Über uns</a>
+        <a href="#warum-wir">Warum wir</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 Fritz Plank – Elektriker Rosenheim. Alle Rechte vorbehalten.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
