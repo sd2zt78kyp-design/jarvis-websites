@@ -3,23 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elektriker Rosenheim | Josef Heringer</title>
-<meta name="description" content="Elektriker Josef Heringer in Rosenheim - Ihr zuverlässiger Partner für Elektroinstallationen, Reparaturen und Wartung.">
+<title>Elektriker Rosenheim | Josef Heringer – Elektroinstallation & Service</title>
+<meta name="description" content="Josef Heringer – Ihr zuverlässiger Elektriker in Rosenheim. Elektroinstallation, Reparaturen, Wartung und Notdienst aus einer Hand.">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    color: #2b2f36;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: #2b2f33;
     line-height: 1.6;
-    background: #f7f8fa;
+    background: #ffffff;
   }
   a { text-decoration: none; color: inherit; }
   ul { list-style: none; }
-  img { max-width: 100%; display: block; }
+  img, svg { display: block; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
 
   /* Header */
   header {
-    background: #12233c;
+    background: #1b2733;
     color: #fff;
     position: sticky;
     top: 0;
@@ -27,19 +34,21 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   }
   .header-inner {
-    max-width: 1150px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 16px 24px;
+    justify-content: space-between;
+    padding: 16px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .logo {
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
-  .logo span { color: #f4a300; }
+  .logo span {
+    color: #f2a900;
+  }
   nav ul {
     display: flex;
     gap: 28px;
@@ -49,8 +58,10 @@
     font-size: 0.95rem;
     transition: color 0.2s;
   }
-  nav a:hover { color: #f4a300; }
-  .menu-toggle {
+  nav a:hover {
+    color: #f2a900;
+  }
+  .nav-toggle {
     display: none;
     flex-direction: column;
     gap: 5px;
@@ -58,7 +69,7 @@
     background: none;
     border: none;
   }
-  .menu-toggle span {
+  .nav-toggle span {
     width: 26px;
     height: 3px;
     background: #fff;
@@ -67,261 +78,318 @@
 
   /* Hero */
   .hero {
-    background: linear-gradient(135deg, #12233c 0%, #1f3a5f 100%);
+    background: linear-gradient(135deg, #1b2733 0%, #2d3e4f 100%);
     color: #fff;
-    padding: 90px 24px;
+    padding: 100px 20px 90px;
     text-align: center;
   }
   .hero h1 {
     font-size: 2.4rem;
-    margin-bottom: 16px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 18px;
+    font-weight: 700;
   }
   .hero p {
     font-size: 1.15rem;
-    color: #cfd8e3;
-    max-width: 650px;
-    margin: 0 auto 32px auto;
+    max-width: 640px;
+    margin: 0 auto 32px;
+    color: #d7dde3;
   }
   .btn {
     display: inline-block;
-    background: #f4a300;
-    color: #12233c;
-    font-weight: 700;
+    background: #f2a900;
+    color: #1b2733;
     padding: 14px 32px;
-    border-radius: 6px;
+    border-radius: 4px;
+    font-weight: 700;
     font-size: 1rem;
     transition: background 0.2s, transform 0.2s;
     border: none;
     cursor: pointer;
   }
   .btn:hover {
-    background: #ffb527;
+    background: #ffbf2e;
     transform: translateY(-2px);
   }
-
-  /* Sections */
-  section {
-    padding: 70px 24px;
+  .btn-outline {
+    display: inline-block;
+    margin-left: 14px;
+    padding: 14px 32px;
+    border: 2px solid #fff;
+    color: #fff;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: background 0.2s, color 0.2s;
   }
-  .section-inner {
-    max-width: 1100px;
-    margin: 0 auto;
+  .btn-outline:hover {
+    background: #fff;
+    color: #1b2733;
+  }
+
+  /* Sections general */
+  section {
+    padding: 80px 0;
   }
   .section-title {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 50px;
   }
   .section-title h2 {
     font-size: 2rem;
-    color: #12233c;
+    color: #1b2733;
     margin-bottom: 12px;
   }
   .section-title p {
-    color: #5a6270;
+    color: #667;
     max-width: 600px;
     margin: 0 auto;
   }
+  .bg-light {
+    background: #f6f8fa;
+  }
 
-  /* Services */
+  /* Leistungen */
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
   }
   .service-card {
     background: #fff;
-    padding: 32px 24px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e5e9ec;
+    border-radius: 8px;
+    padding: 32px 26px;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
   }
-  .service-card .icon {
-    width: 52px;
-    height: 52px;
-    margin: 0 auto 18px auto;
-    color: #f4a300;
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 18px;
+    color: #f2a900;
   }
   .service-card h3 {
-    color: #12233c;
+    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-size: 1.15rem;
+    color: #1b2733;
   }
   .service-card p {
-    color: #5a6270;
-    font-size: 0.95rem;
+    color: #5a6570;
+    font-size: 0.97rem;
   }
 
-  /* About */
+  /* Über uns */
   .about {
-    background: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
   }
-  .about-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  .about-text h2 {
+    font-size: 2rem;
+    color: #1b2733;
+    margin-bottom: 20px;
   }
-  .about-inner p {
-    color: #444b56;
-    font-size: 1.05rem;
+  .about-text p {
+    color: #5a6570;
     margin-bottom: 16px;
   }
-
-  /* Info cards (Kontaktdaten) */
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 26px;
-    margin-top: 10px;
-  }
-  .info-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 26px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+  .about-image {
+    background: #1b2733;
+    border-radius: 8px;
+    height: 320px;
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
+    color: #f2a900;
   }
-  .info-card .icon {
-    width: 30px;
-    height: 30px;
+  .about-image svg {
+    width: 120px;
+    height: 120px;
+  }
+  .about-list {
+    margin-top: 20px;
+  }
+  .about-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #2b2f33;
+  }
+  .about-list svg {
+    width: 20px;
+    height: 20px;
+    color: #f2a900;
     flex-shrink: 0;
-    color: #f4a300;
-  }
-  .info-card h4 {
-    color: #12233c;
-    margin-bottom: 6px;
-    font-size: 1rem;
-  }
-  .info-card p, .info-card a {
-    color: #5a6270;
-    font-size: 0.95rem;
   }
 
   /* Kontakt */
-  .kontakt-section {
-    background: #eef1f5;
-  }
-  .kontakt-wrapper {
+  .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
   }
-  .kontakt-form {
+  .contact-info h2 {
+    font-size: 1.7rem;
+    color: #1b2733;
+    margin-bottom: 24px;
+  }
+  .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 26px;
+  }
+  .info-icon {
+    width: 26px;
+    height: 26px;
+    color: #f2a900;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .info-item h4 {
+    font-size: 1rem;
+    color: #1b2733;
+    margin-bottom: 4px;
+  }
+  .info-item p, .info-item a {
+    color: #5a6570;
+    font-size: 0.96rem;
+  }
+
+  .contact-form {
     background: #fff;
+    border: 1px solid #e5e9ec;
+    border-radius: 8px;
     padding: 36px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
   }
   .form-group {
     margin-bottom: 20px;
   }
   .form-group label {
     display: block;
-    margin-bottom: 6px;
     font-weight: 600;
-    color: #12233c;
+    margin-bottom: 6px;
     font-size: 0.92rem;
+    color: #1b2733;
   }
   .form-group input,
   .form-group textarea {
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #d3d8de;
-    border-radius: 6px;
-    font-size: 0.95rem;
+    border: 1px solid #d3d9de;
+    border-radius: 5px;
     font-family: inherit;
-    resize: vertical;
+    font-size: 0.96rem;
+    color: #2b2f33;
   }
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
-    border-color: #f4a300;
+    border-color: #f2a900;
   }
-  .form-msg {
-    margin-top: 16px;
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .submit-btn {
+    width: 100%;
+    background: #f2a900;
+    color: #1b2733;
+    border: none;
     padding: 14px;
-    border-radius: 6px;
-    font-size: 0.95rem;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .submit-btn:hover {
+    background: #ffbf2e;
+  }
+  .submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+
+  .form-message {
     display: none;
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 5px;
+    font-size: 0.92rem;
   }
-  .form-msg.success {
+  .form-message.success {
     display: block;
-    background: #e3f7e6;
-    color: #256d33;
-    border: 1px solid #b5e3bb;
+    background: #e5f7ea;
+    color: #1e7a3a;
+    border: 1px solid #b8e6c6;
   }
-  .form-msg.error {
+  .form-message.error {
     display: block;
-    background: #fbeaea;
-    color: #8a2b2b;
-    border: 1px solid #f3c2c2;
+    background: #fdeaea;
+    color: #a32020;
+    border: 1px solid #f3c1c1;
   }
 
   /* Footer */
   footer {
-    background: #12233c;
-    color: #cfd8e3;
-    padding: 40px 24px 24px 24px;
-  }
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 24px;
-  }
-  .footer-col h4 {
-    color: #fff;
-    margin-bottom: 12px;
-    font-size: 1rem;
-  }
-  .footer-col p, .footer-col a {
-    color: #b8c2cf;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 6px;
-  }
-  .footer-bottom {
+    background: #1b2733;
+    color: #b9c2ca;
+    padding: 40px 20px 24px;
     text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #24365a;
+  }
+  footer .footer-top {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  footer a {
+    color: #b9c2ca;
+    font-size: 0.9rem;
+  }
+  footer a:hover {
+    color: #f2a900;
+  }
+  footer .copyright {
     font-size: 0.85rem;
-    color: #8895a7;
+    color: #7c8790;
   }
 
-  @media (max-width: 780px) {
-    nav { display: none; }
-    .menu-toggle { display: flex; }
-    nav.open {
-      display: flex;
+  @media (max-width: 800px) {
+    nav ul {
       position: absolute;
-      top: 64px;
+      top: 100%;
       left: 0;
       right: 0;
-      background: #12233c;
+      background: #1b2733;
       flex-direction: column;
-      padding: 20px 24px;
+      padding: 20px;
+      gap: 16px;
+      display: none;
     }
-    nav.open ul {
-      flex-direction: column;
-      gap: 18px;
+    nav ul.open {
+      display: flex;
     }
-    .kontakt-wrapper {
+    .nav-toggle {
+      display: flex;
+    }
+    .about, .contact-grid {
       grid-template-columns: 1fr;
     }
-    .hero h1 { font-size: 1.8rem; }
+    .hero h1 {
+      font-size: 1.9rem;
+    }
+    .btn-outline {
+      margin-left: 0;
+      margin-top: 12px;
+      display: inline-block;
+    }
   }
 </style>
 </head>
@@ -329,12 +397,12 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo">Josef Heringer <span>Elektro</span></div>
-    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+    <div class="logo">Josef <span>Heringer</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
     </button>
-    <nav id="navMenu">
-      <ul>
+    <nav>
+      <ul id="navList">
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
@@ -344,106 +412,157 @@
 </header>
 
 <section class="hero">
-  <h1>Ihr zuverlässiger Elektriker in Rosenheim</h1>
-  <p>Fachgerechte Elektroinstallationen, schnelle Störungsbehebung und professionelle Beratung – seit vielen Jahren für Privatkunden und Gewerbe in Rosenheim und Umgebung.</p>
-  <a href="#kontakt" class="btn">Jetzt Kontakt aufnehmen</a>
+  <div class="container">
+    <h1>Ihr Elektriker in Rosenheim</h1>
+    <p>Zuverlässige Elektroinstallationen, Reparaturen und Wartung – fachgerecht, termintreu und aus einer Hand. Meisterbetrieb Josef Heringer.</p>
+    <a href="#kontakt" class="btn">Termin anfragen</a>
+    <a href="tel:0803137216" class="btn-outline">Jetzt anrufen</a>
+  </div>
 </section>
 
-<section id="leistungen">
-  <div class="section-inner">
+<section id="leistungen" class="bg-light">
+  <div class="container">
     <div class="section-title">
       <h2>Unsere Leistungen</h2>
-      <p>Von der Neuinstallation bis zur Notfallreparatur – alles aus einer Hand.</p>
+      <p>Von der Neuinstallation bis zum Notdienst – wir kümmern uns um Ihre Elektrik.</p>
     </div>
     <div class="services-grid">
+
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></svg>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <h3>Elektroinstallation</h3>
-        <p>Fachgerechte Installation für Neubau, Sanierung und Umbau nach aktuellen Sicherheitsstandards.</p>
+        <p>Neu- und Umbauten, moderne Elektrik für Wohn- und Gewerbeobjekte nach aktuellen Vorschriften.</p>
       </div>
+
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-        <h3>Notdienst & Reparatur</h3>
-        <p>Schnelle Hilfe bei Stromausfall, Kurzschluss oder defekten Leitungen – zuverlässig und termingerecht.</p>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Notdienst</h3>
+        <p>Schnelle Hilfe bei Stromausfall oder Defekten – zuverlässig und rund um Rosenheim erreichbar.</p>
       </div>
+
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
-        <h3>Sicherheitsprüfung</h3>
-        <p>Regelmäßige Prüfung Ihrer elektrischen Anlagen nach DIN VDE zur Vermeidung von Gefahren.</p>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="4" y="3" width="16" height="18" rx="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M9 7h6M9 11h6M9 15h4" stroke-linecap="round"/>
+        </svg>
+        <h3>Wartung & Prüfung</h3>
+        <p>Regelmäßige Sicherheitsprüfungen und Wartung Ihrer Anlagen zur Vermeidung von Störungen.</p>
       </div>
+
       <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 3v2M12 19v2M5 12H3M21 12h-2M18.4 5.6l-1.4 1.4M7 17l-1.4 1.4M18.4 18.4L17 17M7 7 5.6 5.6" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="4" stroke-linecap="round"/>
+        </svg>
+        <h3>Beleuchtungstechnik</h3>
+        <p>Planung und Umsetzung moderner Beleuchtungskonzepte für Innen- und Außenbereiche.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 12h4l3-8 4 16 3-8h4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Fehlersuche & Reparatur</h3>
+        <p>Systematische Fehlerdiagnose und schnelle Behebung elektrischer Störungen jeder Art.</p>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 21v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6M8 13V7a4 4 0 0 1 8 0v6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
         <h3>Smart Home</h3>
-        <p>Moderne Lösungen für vernetztes Wohnen – Beleuchtung, Heizung und Sicherheit intelligent steuern.</p>
+        <p>Intelligente Steuerung von Licht, Heizung und Sicherheitstechnik für mehr Komfort.</p>
       </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 11h.01M10 11h.01M14 11h.01"/></svg>
-        <h3>Zählerschrank & Verteiler</h3>
-        <p>Modernisierung und Erweiterung von Zählerschränken und Verteileranlagen nach aktuellen Normen.</p>
+
+    </div>
+  </div>
+</section>
+
+<section id="ueber-uns">
+  <div class="container">
+    <div class="about">
+      <div class="about-image">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
-      <div class="service-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        <h3>Beleuchtungskonzepte</h3>
-        <p>Individuelle Lichtplanung für Wohn- und Geschäftsräume – funktional und stimmungsvoll.</p>
+      <div class="about-text">
+        <h2>Über Josef Heringer</h2>
+        <p>Seit vielen Jahren steht der Name Josef Heringer in Rosenheim für zuverlässige und fachgerechte Elektroarbeiten. Als Meisterbetrieb legen wir größten Wert auf saubere Ausführung, transparente Kommunikation und termingerechte Umsetzung.</p>
+        <p>Ob privates Wohnhaus, Gewerbeobjekt oder Notfall – wir sind Ihr kompetenter Ansprechpartner für alle Fragen rund um Ihre Elektroinstallation.</p>
+        <ul class="about-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Meisterbetrieb mit langjähriger Erfahrung
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Faire und transparente Preise
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l4 4 10-10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Termintreue und saubere Arbeit
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<section id="ueber-uns" class="about">
-  <div class="section-inner about-inner">
+<section id="kontakt" class="bg-light">
+  <div class="container">
     <div class="section-title">
-      <h2>Über Josef Heringer</h2>
+      <h2>Kontakt</h2>
+      <p>Nehmen Sie Kontakt zu uns auf – wir melden uns schnellstmöglich zurück.</p>
     </div>
-    <p>Mit langjähriger Erfahrung im Elektrohandwerk bietet Herr Josef Heringer in Rosenheim kompetente und zuverlässige Dienstleistungen rund um Elektroinstallationen an. Qualität, Sicherheit und persönlicher Service stehen dabei stets im Mittelpunkt.</p>
-    <p>Ob Neuinstallation, Reparatur oder Beratung – wir sorgen dafür, dass bei Ihnen alles sicher und einwandfrei funktioniert.</p>
-  </div>
-</section>
+    <div class="contact-grid">
 
-<section id="info">
-  <div class="section-inner">
-    <div class="section-title">
-      <h2>Erreichbarkeit</h2>
-      <p>Wir sind für Sie da – persönlich, telefonisch oder vor Ort in Rosenheim.</p>
-    </div>
-    <div class="info-grid">
-      <div class="info-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9z"/></svg>
-        <div>
-          <h4>Telefon</h4>
-          <p>08031 37216</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-        <div>
-          <h4>Adresse</h4>
-          <p>Aventinstraße 7<br>83022 Rosenheim, Deutschland</p>
-        </div>
-      </div>
-      <div class="info-card">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
-        <div>
-          <h4>Erreichbarkeit</h4>
-          <p>Mo–Fr: 07:30–17:00 Uhr<br>Termine nach Vereinbarung</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <div class="contact-info">
+        <h2>So erreichen Sie uns</h2>
 
-<section id="kontakt" class="kontakt-section">
-  <div class="section-inner">
-    <div class="section-title">
-      <h2>Kontaktieren Sie uns</h2>
-      <p>Haben Sie Fragen oder benötigen Sie einen Termin? Schreiben Sie uns eine Nachricht.</p>
-    </div>
-    <div class="kontakt-wrapper">
-      <div class="kontakt-form">
+        <div class="info-item">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h4>Telefon</h4>
+            <p><a href="tel:0803137216">08031 37216</a></p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="10" r="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h4>Adresse</h4>
+            <p>Aventinstraße 7<br>83022 Rosenheim, Deutschland</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <svg class="info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div>
+            <h4>Öffnungszeiten</h4>
+            <p>Mo. – Fr.: 07:30 – 17:00 Uhr<br>Notdienst nach Vereinbarung</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
         <form id="kontaktForm">
           <div class="form-group">
             <label for="nameFeld">Name</label>
-            <input type="text" id="nameFeld" name="name" required placeholder="Ihr Name">
+            <input type="text" id="nameFeld" name="name" required placeholder="Ihr vollständiger Name">
           </div>
           <div class="form-group">
             <label for="kontaktFeld">Telefon oder E-Mail</label>
@@ -451,80 +570,57 @@
           </div>
           <div class="form-group">
             <label for="nachrichtFeld">Nachricht</label>
-            <textarea id="nachrichtFeld" name="nachricht" rows="5" required placeholder="Ihre Nachricht an uns"></textarea>
+            <textarea id="nachrichtFeld" name="nachricht" required placeholder="Wie können wir Ihnen helfen?"></textarea>
           </div>
-          <button type="submit" class="btn" style="width:100%;">Nachricht senden</button>
-          <div id="formMsg" class="form-msg"></div>
+          <button type="submit" class="submit-btn" id="submitBtn">Nachricht senden</button>
+          <div id="formMessage" class="form-message"></div>
         </form>
       </div>
-      <div class="info-grid" style="grid-template-columns:1fr;">
-        <div class="info-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9z"/></svg>
-          <div>
-            <h4>Direkt anrufen</h4>
-            <p>08031 37216</p>
-          </div>
-        </div>
-        <div class="info-card">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0 1 14 0c0 3.5-3 7-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-          <div>
-            <h4>Vor Ort</h4>
-            <p>Aventinstraße 7<br>83022 Rosenheim</p>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-col">
-      <h4>Josef Heringer Elektro</h4>
-      <p>Aventinstraße 7</p>
-      <p>83022 Rosenheim, Deutschland</p>
-    </div>
-    <div class="footer-col">
-      <h4>Kontakt</h4>
-      <p>Telefon: 08031 37216</p>
-    </div>
-    <div class="footer-col">
-      <h4>Öffnungszeiten</h4>
-      <p>Mo–Fr: 07:30–17:00 Uhr</p>
-      <p>Termine nach Vereinbarung</p>
-    </div>
+  <div class="footer-top">
+    <a href="#leistungen">Leistungen</a>
+    <a href="#ueber-uns">Über uns</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="tel:0803137216">08031 37216</a>
   </div>
-  <div class="footer-bottom">
-    &copy; <span id="jahr"></span> Josef Heringer – Elektriker Rosenheim. Alle Rechte vorbehalten.
-  </div>
+  <p class="copyright">&copy; <span id="jahr"></span> Josef Heringer – Elektriker Rosenheim. Alle Rechte vorbehalten.</p>
 </footer>
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navMenu = document.getElementById('navMenu');
-  menuToggle.addEventListener('click', function () {
-    navMenu.classList.toggle('open');
+  const navToggle = document.getElementById('navToggle');
+  const navList = document.getElementById('navList');
+  navToggle.addEventListener('click', function() {
+    navList.classList.toggle('open');
   });
-  navMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      navMenu.classList.remove('open');
+  navList.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      navList.classList.remove('open');
     });
   });
 
-  const kontaktForm = document.getElementById('kontaktForm');
-  const formMsg = document.getElementById('formMsg');
+  const form = document.getElementById('kontaktForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formMessage = document.getElementById('formMessage');
 
-  kontaktForm.addEventListener('submit', function (e) {
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('nameFeld').value;
-    const kontakt = document.getElementById('kontaktFeld').value;
-    const nachricht = document.getElementById('nachrichtFeld').value;
+    formMessage.className = 'form-message';
+    formMessage.textContent = '';
 
-    formMsg.className = 'form-msg';
-    formMsg.style.display = 'none';
+    const name = document.getElementById('nameFeld').value.trim();
+    const kontakt = document.getElementById('kontaktFeld').value.trim();
+    const nachricht = document.getElementById('nachrichtFeld').value.trim();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet...';
 
     fetch('https://vinka.app.n8n.cloud/webhook/kontakt-formular', {
       method: 'POST',
@@ -538,18 +634,22 @@
         nachricht: nachricht
       })
     })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error('Netzwerkfehler');
-        }
-        formMsg.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
-        formMsg.className = 'form-msg success';
-        kontaktForm.reset();
-      })
-      .catch(function () {
-        formMsg.textContent = 'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es erneut oder rufen Sie uns an.';
-        formMsg.className = 'form-msg error';
-      });
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error('Netzwerkfehler');
+      }
+      formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
+      formMessage.className = 'form-message success';
+      form.reset();
+    })
+    .catch(function(error) {
+      formMessage.textContent = 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
+      formMessage.className = 'form-message error';
+    })
+    .finally(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Nachricht senden';
+    });
   });
 </script>
 
