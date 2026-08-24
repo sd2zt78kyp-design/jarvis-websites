@@ -4,30 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fritz Plank – Elektriker in Rosenheim</title>
-<meta name="description" content="Fritz Plank – Ihr zuverlässiger Elektriker in Rosenheim-Fürstätt. Elektroinstallation, Reparaturen, Beratung und Notdienst.">
+<meta name="description" content="Fritz Plank – Ihr zuverlässiger Elektriker in Rosenheim-Fürstätt. Elektroinstallation, Reparaturen, Wartung und mehr.">
 <style>
   :root {
     --primary: #1a3c5e;
-    --primary-light: #2c5a8a;
-    --accent: #d98e04;
+    --primary-light: #2c5a86;
+    --accent: #d4a017;
     --bg-light: #f7f9fb;
-    --text-dark: #222;
-    --text-muted: #5a6672;
-    --border-color: #e0e4e8;
+    --text-dark: #1f2933;
+    --text-light: #5f6b7a;
+    --border-color: #e2e8f0;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     background: #fff;
   }
   a { text-decoration: none; color: inherit; }
-  ul { list-style: none; }
   img { max-width: 100%; display: block; }
-
   .container {
-    max-width: 1100px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
   }
@@ -50,9 +49,11 @@
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--primary);
+    letter-spacing: 0.5px;
   }
   .logo span { color: var(--accent); }
   nav ul {
+    list-style: none;
     display: flex;
     gap: 28px;
   }
@@ -60,54 +61,67 @@
     font-weight: 500;
     color: var(--text-dark);
     transition: color 0.2s;
+    font-size: 0.95rem;
   }
-  nav a:hover { color: var(--accent); }
-  .nav-toggle {
+  nav a:hover { color: var(--primary); }
+  .header-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.95rem;
+  }
+  .menu-toggle {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
     background: none;
     border: none;
+    cursor: pointer;
+    padding: 8px;
   }
-  .nav-toggle span {
-    width: 26px;
-    height: 3px;
-    background: var(--primary);
-    border-radius: 2px;
-  }
+  .menu-toggle svg { width: 26px; height: 26px; color: var(--primary); }
 
   /* Hero */
   .hero {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     color: #fff;
-    padding: 90px 0 80px;
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
   }
-  .hero-inner {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    flex-wrap: wrap;
+  .hero::before {
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 400px;
+    height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
   }
-  .hero-text { flex: 1 1 400px; }
-  .hero-text h1 {
-    font-size: 2.4rem;
-    line-height: 1.25;
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
     margin-bottom: 18px;
+    line-height: 1.25;
   }
-  .hero-text p {
-    font-size: 1.1rem;
-    color: #dbe4ee;
-    margin-bottom: 28px;
-    max-width: 520px;
+  .hero p {
+    font-size: 1.15rem;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 32px;
   }
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: var(--accent);
-    color: #fff;
-    padding: 14px 28px;
+    color: #1a1a1a;
+    padding: 14px 30px;
     border-radius: 6px;
     font-weight: 600;
     font-size: 1rem;
@@ -115,42 +129,20 @@
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
   }
-  .btn:hover {
-    background: #c17f03;
-    transform: translateY(-2px);
-  }
+  .btn:hover { background: #c19116; transform: translateY(-2px); }
   .btn-outline {
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
+    margin-left: 14px;
   }
-  .btn-outline:hover {
-    background: #fff;
-    color: var(--primary);
-  }
-  .hero-buttons {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .hero-image {
-    flex: 1 1 320px;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-image svg {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
-  /* Sections general */
-  section {
-    padding: 70px 0;
-  }
+  /* Section styling */
+  section { padding: 80px 0; }
   .section-title {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 50px;
   }
   .section-title h2 {
     font-size: 2rem;
@@ -158,144 +150,153 @@
     margin-bottom: 12px;
   }
   .section-title p {
-    color: var(--text-muted);
+    color: var(--text-light);
     max-width: 600px;
     margin: 0 auto;
   }
 
   /* Services */
-  .services-grid {
+  .services { background: var(--bg-light); }
+  .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
   }
   .service-card {
-    background: var(--bg-light);
+    background: #fff;
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    padding: 32px 24px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 32px 26px;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
   .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(26,60,94,0.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
   }
   .service-icon {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 18px;
-    color: var(--primary);
-  }
-  .service-card h3 {
-    color: var(--primary);
-    margin-bottom: 10px;
-    font-size: 1.15rem;
-  }
-  .service-card p {
-    color: var(--text-muted);
-    font-size: 0.96rem;
-  }
-
-  /* About */
-  .about {
-    background: var(--bg-light);
-  }
-  .about-inner {
+    width: 52px;
+    height: 52px;
+    background: rgba(26,60,94,0.08);
+    border-radius: 10px;
     display: flex;
-    gap: 50px;
     align-items: center;
-    flex-wrap: wrap;
-  }
-  .about-text { flex: 1 1 400px; }
-  .about-text h2 {
-    color: var(--primary);
-    font-size: 1.9rem;
+    justify-content: center;
     margin-bottom: 18px;
   }
+  .service-icon svg { width: 26px; height: 26px; color: var(--primary); }
+  .service-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+  }
+  .service-card p { color: var(--text-light); font-size: 0.95rem; }
+
+  /* Über uns */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+  }
   .about-text p {
-    color: var(--text-muted);
+    color: var(--text-light);
     margin-bottom: 16px;
   }
   .about-list {
-    flex: 1 1 320px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    list-style: none;
+    margin-top: 20px;
   }
-  .about-item {
+  .about-list li {
     display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    background: #fff;
-    padding: 18px;
-    border-radius: 8px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  .about-list svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+  .about-image {
+    background: var(--bg-light);
+    border-radius: 12px;
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 1px solid var(--border-color);
   }
-  .about-item svg {
-    width: 28px;
-    height: 28px;
-    color: var(--accent);
-    flex-shrink: 0;
-    margin-top: 3px;
-  }
-  .about-item h4 {
-    color: var(--primary);
-    margin-bottom: 4px;
-    font-size: 1rem;
-  }
-  .about-item p {
-    color: var(--text-muted);
-    font-size: 0.92rem;
-  }
+  .about-image svg { width: 100px; height: 100px; color: var(--primary-light); opacity: 0.6; }
 
-  /* Contact */
-  .contact-inner {
-    display: flex;
+  /* Kontakt */
+  .contact { background: var(--bg-light); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
     gap: 50px;
-    flex-wrap: wrap;
   }
-  .contact-info {
-    flex: 1 1 320px;
+  .contact-info-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px;
+    border: 1px solid var(--border-color);
+  }
+  .contact-info-card h3 {
+    color: var(--primary);
+    margin-bottom: 24px;
+    font-size: 1.3rem;
   }
   .info-item {
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
-  .info-item svg {
-    width: 30px;
-    height: 30px;
-    color: var(--accent);
+  .info-item .icon-wrap {
+    width: 44px;
+    height: 44px;
+    background: rgba(26,60,94,0.08);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
-  .info-item h4 {
-    color: var(--primary);
+  .info-item .icon-wrap svg { width: 22px; height: 22px; color: var(--primary); }
+  .info-item .info-text strong {
+    display: block;
+    color: var(--text-dark);
     margin-bottom: 4px;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
-  .info-item p, .info-item a {
-    color: var(--text-muted);
+  .info-item .info-text span,
+  .info-item .info-text a {
+    color: var(--text-light);
+    font-size: 0.95rem;
   }
-  .info-item a:hover { color: var(--accent); }
+  .info-item .info-text a:hover { color: var(--primary); }
 
   .contact-form {
-    flex: 1 1 380px;
-    background: var(--bg-light);
-    padding: 32px;
-    border-radius: 10px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 36px;
     border: 1px solid var(--border-color);
   }
-  .form-group {
+  .contact-form h3 {
+    color: var(--primary);
     margin-bottom: 20px;
+    font-size: 1.3rem;
   }
+  .form-group { margin-bottom: 20px; }
   .form-group label {
     display: block;
-    margin-bottom: 6px;
     font-weight: 600;
-    font-size: 0.92rem;
-    color: var(--primary);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: var(--text-dark);
   }
   .form-group input,
   .form-group textarea {
@@ -303,81 +304,104 @@
     padding: 12px 14px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
-    font-family: inherit;
     font-size: 0.95rem;
-    resize: vertical;
+    font-family: inherit;
+    color: var(--text-dark);
+    transition: border-color 0.2s;
   }
   .form-group input:focus,
   .form-group textarea:focus {
     outline: none;
     border-color: var(--primary-light);
   }
-  .form-msg {
-    margin-top: 16px;
-    padding: 14px;
+  .form-group textarea { resize: vertical; min-height: 120px; }
+
+  .form-message {
+    padding: 14px 16px;
     border-radius: 6px;
-    display: none;
-    font-size: 0.93rem;
+    font-size: 0.9rem;
+    margin-top: 16px;
   }
-  .form-msg.success {
+  .form-message.success {
     display: block;
-    background: #e5f6ea;
-    color: #1f7a3d;
-    border: 1px solid #b7e4c3;
+    background: #e6f4ea;
+    color: #256029;
+    border: 1px solid #b7dfc0;
   }
-  .form-msg.error {
+  .form-message.error {
     display: block;
-    background: #fbe7e7;
-    color: #a12b2b;
-    border: 1px solid #f2bcbc;
+    background: #fdecea;
+    color: #9b2226;
+    border: 1px solid #f5c2c0;
   }
 
   /* Footer */
   footer {
     background: var(--primary);
-    color: #d9e2ec;
-    padding: 40px 0 20px;
+    color: rgba(255,255,255,0.85);
+    padding: 40px 0 24px;
   }
   .footer-inner {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 16px;
     margin-bottom: 24px;
   }
-  .footer-inner h3 {
+  .footer-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #fff;
-    margin-bottom: 10px;
   }
-  .footer-inner p, .footer-inner a {
-    color: #b6c4d4;
-    font-size: 0.92rem;
+  .footer-links {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
   }
-  .footer-inner a:hover { color: #fff; }
+  .footer-links a {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: #fff; }
   .footer-bottom {
     text-align: center;
+    padding-top: 20px;
     border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 18px;
     font-size: 0.85rem;
-    color: #9fb0c3;
+    color: rgba(255,255,255,0.6);
+  }
+
+  @media (max-width: 900px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .about-image { height: 220px; }
   }
 
   @media (max-width: 768px) {
-    nav ul {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: #fff;
-      flex-direction: column;
-      padding: 20px;
-      gap: 16px;
-      border-bottom: 1px solid var(--border-color);
-      display: none;
-    }
-    nav ul.open { display: flex; }
-    .nav-toggle { display: flex; }
-    .hero-text h1 { font-size: 1.9rem; }
+    nav { display: none; }
+    .header-phone { display: none; }
+    .menu-toggle { display: block; }
+    .hero h1 { font-size: 2rem; }
+    .hero { padding: 60px 0; }
+    section { padding: 55px 0; }
+    .btn-outline { margin-left: 0; margin-top: 12px; }
+  }
+
+  nav.open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+  }
+  nav.open ul {
+    flex-direction: column;
+    gap: 16px;
   }
 </style>
 </head>
@@ -386,253 +410,225 @@
 <header>
   <div class="container header-inner">
     <div class="logo">Fritz Plank <span>Elektro</span></div>
-    <nav>
-      <ul id="navList">
+    <nav id="mainNav">
+      <ul>
         <li><a href="#leistungen">Leistungen</a></li>
         <li><a href="#ueber-uns">Über uns</a></li>
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
+    <div class="header-phone">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>08031 45593</span>
+    </div>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-inner">
-    <div class="hero-text">
-      <h1>Ihr Elektriker in Rosenheim – zuverlässig, fachkundig, vor Ort</h1>
-      <p>Von der Elektroinstallation über Reparaturen bis zum Notdienst: Fritz Plank steht Ihnen mit langjähriger Erfahrung und höchster Sorgfalt zur Seite.</p>
-      <div class="hero-buttons">
-        <a href="#kontakt" class="btn">Termin anfragen</a>
-        <a href="tel:0803145593" class="btn btn-outline">Jetzt anrufen</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <svg viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="30" y="40" width="340" height="240" rx="12" stroke="#dbe4ee" stroke-width="4"/>
-        <path d="M200 90 L150 190 H195 L180 250 L250 150 H205 L200 90Z" fill="#d98e04"/>
-        <circle cx="200" cy="270" r="6" fill="#dbe4ee"/>
-        <circle cx="80" cy="80" r="10" stroke="#dbe4ee" stroke-width="3"/>
-        <circle cx="320" cy="80" r="10" stroke="#dbe4ee" stroke-width="3"/>
-      </svg>
-    </div>
+  <div class="container hero-content">
+    <h1>Elektriker in Rosenheim – Fachwissen, dem Sie vertrauen können</h1>
+    <p>Fritz Plank steht seit vielen Jahren für zuverlässige Elektroinstallationen, schnelle Reparaturen und professionelle Beratung in Rosenheim und Umgebung.</p>
+    <a href="#kontakt" class="btn">Termin anfragen</a>
+    <a href="tel:0803145593" class="btn btn-outline">Jetzt anrufen</a>
   </div>
 </section>
 
-<section id="leistungen">
+<section id="leistungen" class="services">
   <div class="container">
     <div class="section-title">
       <h2>Unsere Leistungen</h2>
-      <p>Kompetente Elektroarbeiten für Privathaushalte und Gewerbe – individuell, sicher und normgerecht.</p>
+      <p>Von der kleinen Reparatur bis zur kompletten Elektroinstallation – alles aus einer Hand.</p>
     </div>
-    <div class="services-grid">
+    <div class="service-grid">
 
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M13 2 L4 14 h6 l-1 8 9-12 h-6 l1-8Z"/>
-        </svg>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+        </div>
         <h3>Elektroinstallation</h3>
-        <p>Neuinstallation und Modernisierung von Elektroanlagen in Wohn- und Gewerbeobjekten.</p>
+        <p>Fachgerechte Installation von Stromleitungen, Steckdosen und Beleuchtungssystemen im Neu- und Altbau.</p>
       </div>
 
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M9 12l2 2 4-4"/>
-        </svg>
-        <h3>Prüfung &amp; Sicherheit</h3>
-        <p>E-Check, Fehlersuche und Sicherheitsprüfungen nach aktuellen DIN-VDE-Normen.</p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Notdienst & Reparatur</h3>
+        <p>Schnelle Hilfe bei Stromausfall, Kurzschluss oder defekten Geräten – zuverlässig und termingerecht.</p>
       </div>
 
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>
-          <circle cx="12" cy="12" r="4"/>
-        </svg>
-        <h3>Beleuchtungstechnik</h3>
-        <p>Planung und Installation moderner, energieeffizienter Beleuchtungslösungen.</p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Sicherheitsprüfungen</h3>
+        <p>E-Check und Prüfung elektrischer Anlagen nach aktuellen Vorschriften für mehr Sicherheit in Ihrem Zuhause.</p>
       </div>
 
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="8" width="18" height="10" rx="2"/>
-          <path d="M7 8V6a5 5 0 0110 0v2"/>
-        </svg>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>
+        </div>
+        <h3>Beleuchtungskonzepte</h3>
+        <p>Individuelle Lichtplanung für Wohn- und Gewerberäume – funktional und stilvoll umgesetzt.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+        </div>
         <h3>Smart Home</h3>
-        <p>Intelligente Steuerung von Licht, Heizung und Sicherheit für mehr Komfort im Alltag.</p>
+        <p>Moderne Steuerungssysteme für Licht, Heizung und Sicherheit – bequem per App gesteuert.</p>
       </div>
 
       <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 2z"/>
-        </svg>
-        <h3>Notdienst</h3>
-        <p>Schnelle Hilfe bei Stromausfall oder Störungen – zuverlässig und unkompliziert.</p>
-      </div>
-
-      <div class="service-card">
-        <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="16" height="16" rx="2"/>
-          <path d="M8 12h8M12 8v8"/>
-        </svg>
-        <h3>Zählerschrankbau</h3>
-        <p>Fachgerechte Erneuerung und Erweiterung von Zählerschränken und Verteilern.</p>
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <h3>Wartung & Service</h3>
+        <p>Regelmäßige Wartung Ihrer elektrischen Anlagen zur langfristigen Sicherstellung des Betriebs.</p>
       </div>
 
     </div>
   </div>
 </section>
 
-<section id="ueber-uns" class="about">
-  <div class="container about-inner">
+<section id="ueber-uns">
+  <div class="container about-grid">
     <div class="about-text">
       <h2>Über Fritz Plank</h2>
-      <p>Als Elektromeisterbetrieb aus Rosenheim-Fürstätt steht Fritz Plank für saubere Handwerksarbeit, faire Beratung und pünktliche Termine.</p>
-      <p>Ob kleine Reparatur oder komplette Elektroinstallation im Neubau – wir setzen jedes Projekt mit Sorgfalt und fachlicher Präzision um.</p>
-      <a href="#kontakt" class="btn">Unverbindlich anfragen</a>
+      <p>Als inhabergeführtes Elektro-Unternehmen mit Sitz in Rosenheim-Fürstätt legen wir größten Wert auf Qualität, Zuverlässigkeit und persönliche Beratung.</p>
+      <p>Ob privater Haushalt oder gewerblicher Kunde – wir sorgen dafür, dass Ihre Elektroinstallationen sicher, modern und normgerecht funktionieren.</p>
+      <ul class="about-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Langjährige Erfahrung im Elektrohandwerk
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Faire, transparente Preisgestaltung
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Persönlicher Service vor Ort in Rosenheim
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Termintreue und saubere Arbeitsweise
+        </li>
+      </ul>
     </div>
-    <div class="about-list">
-      <div class="about-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M12 7v5l3 3"/>
-        </svg>
-        <div>
-          <h4>Pünktlich &amp; zuverlässig</h4>
-          <p>Termintreue Ausführung ohne Verzögerungen.</p>
-        </div>
-      </div>
-      <div class="about-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0116 0c0 4.5-4 8-8 12z"/>
-          <circle cx="12" cy="9" r="2.5"/>
-        </svg>
-        <div>
-          <h4>Vor Ort in Rosenheim</h4>
-          <p>Kurze Anfahrtswege in der gesamten Region.</p>
-        </div>
-      </div>
-      <div class="about-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 12l2 2 4-4"/>
-          <circle cx="12" cy="12" r="10"/>
-        </svg>
-        <div>
-          <h4>Geprüfte Qualität</h4>
-          <p>Arbeiten nach aktuellen VDE-Vorschriften.</p>
-        </div>
-      </div>
+    <div class="about-image">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
     </div>
   </div>
 </section>
 
-<section id="kontakt">
+<section id="kontakt" class="contact">
   <div class="container">
     <div class="section-title">
-      <h2>Kontakt</h2>
-      <p>Nehmen Sie Kontakt auf – wir melden uns zeitnah bei Ihnen zurück.</p>
+      <h2>Kontakt aufnehmen</h2>
+      <p>Wir freuen uns auf Ihre Anfrage – rufen Sie uns an oder nutzen Sie das Kontaktformular.</p>
     </div>
-    <div class="contact-inner">
-      <div class="contact-info">
+    <div class="contact-grid">
+
+      <div class="contact-info-card">
+        <h3>Kontaktdaten</h3>
         <div class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.9 2.2z"/>
-          </svg>
-          <div>
-            <h4>Telefon</h4>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div class="info-text">
+            <strong>Telefon</strong>
             <a href="tel:0803145593">08031 45593</a>
           </div>
         </div>
         <div class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 21c-4-4-8-7.5-8-12a8 8 0 0116 0c0 4.5-4 8-8 12z"/>
-            <circle cx="12" cy="9" r="2.5"/>
-          </svg>
-          <div>
-            <h4>Adresse</h4>
-            <p>Am Gries 11A<br>83026 Rosenheim-Fürstätt<br>Deutschland</p>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-text">
+            <strong>Adresse</strong>
+            <span>Am Gries 11A, 83026 Rosenheim-Fürstätt, Deutschland</span>
           </div>
         </div>
         <div class="info-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 7v5l3 3"/>
-          </svg>
-          <div>
-            <h4>Erreichbarkeit</h4>
-            <p>Mo–Fr: 07:00–17:00 Uhr<br>Notdienst nach Vereinbarung</p>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-text">
+            <strong>Erreichbarkeit</strong>
+            <span>Mo–Fr: 07:30 – 17:00 Uhr</span>
           </div>
         </div>
       </div>
 
-      <form class="contact-form" id="kontaktForm">
-        <div class="form-group">
-          <label for="nameFeld">Name</label>
-          <input type="text" id="nameFeld" name="name" required placeholder="Ihr vollständiger Name">
-        </div>
-        <div class="form-group">
-          <label for="kontaktFeld">Telefon oder E-Mail</label>
-          <input type="text" id="kontaktFeld" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail-Adresse">
-        </div>
-        <div class="form-group">
-          <label for="nachrichtFeld">Nachricht</label>
-          <textarea id="nachrichtFeld" name="nachricht" rows="5" required placeholder="Beschreiben Sie kurz Ihr Anliegen"></textarea>
-        </div>
-        <button type="submit" class="btn" style="width:100%;justify-content:center;">Nachricht senden</button>
-        <div class="form-msg" id="formMsg"></div>
-      </form>
+      <div class="contact-form">
+        <h3>Nachricht senden</h3>
+        <form id="kontaktForm">
+          <div class="form-group">
+            <label for="nameFeld">Name</label>
+            <input type="text" id="nameFeld" name="name" required placeholder="Ihr vollständiger Name">
+          </div>
+          <div class="form-group">
+            <label for="kontaktFeld">Telefon oder E-Mail</label>
+            <input type="text" id="kontaktFeld" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail-Adresse">
+          </div>
+          <div class="form-group">
+            <label for="nachrichtFeld">Nachricht</label>
+            <textarea id="nachrichtFeld" name="nachricht" required placeholder="Beschreiben Sie kurz Ihr Anliegen"></textarea>
+          </div>
+          <button type="submit" class="btn" id="submitBtn">Nachricht senden</button>
+          <div id="formMessage"></div>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container footer-inner">
-    <div>
-      <h3>Fritz Plank Elektro</h3>
-      <p>Am Gries 11A<br>83026 Rosenheim-Fürstätt</p>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">Fritz Plank Elektro</div>
+      <ul class="footer-links">
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
     </div>
-    <div>
-      <h3>Kontakt</h3>
-      <p><a href="tel:0803145593">08031 45593</a></p>
+    <div class="footer-bottom">
+      &copy; <span id="jahr"></span> Fritz Plank – Elektriker Rosenheim. Alle Rechte vorbehalten.
     </div>
-    <div>
-      <h3>Öffnungszeiten</h3>
-      <p>Mo–Fr: 07:00–17:00 Uhr</p>
-    </div>
-  </div>
-  <div class="container footer-bottom">
-    &copy; <span id="jahr"></span> Fritz Plank – Elektriker Rosenheim. Alle Rechte vorbehalten.
   </div>
 </footer>
 
 <script>
   document.getElementById('jahr').textContent = new Date().getFullYear();
 
-  const navToggle = document.getElementById('navToggle');
-  const navList = document.getElementById('navList');
-  navToggle.addEventListener('click', function() {
-    navList.classList.toggle('open');
-  });
-  navList.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      navList.classList.remove('open');
-    });
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', function() {
+    mainNav.classList.toggle('open');
   });
 
-  const form = document.getElementById('kontaktForm');
-  const formMsg = document.getElementById('formMsg');
+  const kontaktForm = document.getElementById('kontaktForm');
+  const formMessage = document.getElementById('formMessage');
+  const submitBtn = document.getElementById('submitBtn');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
+  kontaktForm.addEventListener('submit', function(event) {
+    event.preventDefault();
 
     const name = document.getElementById('nameFeld').value;
     const kontakt = document.getElementById('kontaktFeld').value;
     const nachricht = document.getElementById('nachrichtFeld').value;
 
-    formMsg.className = 'form-msg';
-    formMsg.style.display = 'none';
+    formMessage.className = 'form-message';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Wird gesendet...';
 
     fetch('https://vinka.app.n8n.cloud/webhook/kontakt-formular', {
       method: 'POST',
@@ -648,17 +644,19 @@
     })
     .then(function(response) {
       if (!response.ok) {
-        throw new Error('Netzwerkfehler');
+        throw new Error('Fehler beim Senden');
       }
-      formMsg.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns zeitnah bei Ihnen.';
-      formMsg.classList.add('success');
-      formMsg.style.display = 'block';
-      form.reset();
+      formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
+      formMessage.className = 'form-message success';
+      kontaktForm.reset();
     })
     .catch(function(error) {
-      formMsg.textContent = 'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
-      formMsg.classList.add('error');
-      formMsg.style.display = 'block';
+      formMessage.textContent = 'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
+      formMessage.className = 'form-message error';
+    })
+    .finally(function() {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Nachricht senden';
     });
   });
 </script>
