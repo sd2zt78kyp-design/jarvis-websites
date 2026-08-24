@@ -666,7 +666,6 @@
     const nachricht = document.getElementById('nachricht').value;
 
     formMessage.className = 'form-message';
-    formMessage.style.display = 'none';
 
     fetch('https://vinka.app.n8n.cloud/webhook/kontakt-formular', {
       method: 'POST',
@@ -684,6 +683,7 @@
       if (response.ok) {
         formMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir melden uns schnellstmöglich bei Ihnen.';
         formMessage.className = 'form-message success';
+       formMessage.style.display = 'block';
         form.reset();
       } else {
         throw new Error('Fehler beim Senden');
@@ -692,6 +692,7 @@
     .catch(function() {
       formMessage.textContent = 'Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut oder rufen Sie uns an.';
       formMessage.className = 'form-message error';
+     formMessage.style.display = 'block';
     });
   });
 </script>
