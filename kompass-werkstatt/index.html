@@ -608,8 +608,8 @@
             <input type="text" id="name" name="name" required placeholder="Ihr Name">
           </div>
           <div class="form-group">
-            <label for="kontakt">Telefon oder E-Mail</label>
-            <input type="text" id="kontakt" name="kontakt" required placeholder="Ihre Telefonnummer oder E-Mail">
+            <label for="kontaktFeld">Telefon oder E-Mail</label>
+            <input type="text" id="kontaktFeld" name="kontaktFeld" required placeholder="Ihre Telefonnummer oder E-Mail">
           </div>
           <div class="form-group">
             <label for="nachricht">Nachricht</label>
@@ -662,7 +662,7 @@
     e.preventDefault();
 
     const name = document.getElementById('name').value;
-    const kontakt = document.getElementById('kontakt').value;
+    const kontakt = document.getElementById('kontaktFeld').value;
     const nachricht = document.getElementById('nachricht').value;
 
     formMessage.className = 'form-message';
